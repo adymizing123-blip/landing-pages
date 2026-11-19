@@ -359,3 +359,16 @@ h1{font-size:clamp(46px,6vw,80px)!important}
 @media (min-width:901px){.faq{grid-template-columns:.85fr 1.15fr;max-width:1240px}.faq__intro{position:sticky;top:110px;text-align:left;align-items:stretch}}
 .faq__img{border-radius:30px}
 @media (max-width:640px){.chero__art{height:380px!important}.chero__frame{width:min(250px,68%)!important}}
+
+/* ===== Desktop hero: text left, ultrasound on the right ===== */
+@media (min-width:1081px){
+  .chero .hero__grid{grid-template-columns:1.05fr .95fr!important;justify-items:stretch!important;text-align:left!important;align-items:center;gap:40px!important}
+  .chero .hero__copy{align-items:flex-start!important;max-width:none!important}
+  .chero .lead{margin-inline:0!important}
+  .chero .hero__btns,.chero__ticks{justify-content:flex-start!important}
+  .chero__art{height:540px!important;max-width:none!important;order:2!important}
+  .chero__art .fcard--a{left:0;top:18%}
+  .chero__art .fcard--b{right:0;top:52%}
+  .chero__art .fcard--c{left:6%;bottom:6%}
+}
+@media (max-width:640px){.chero__frame{width:min(200px,56%)!important}}

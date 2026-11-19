@@ -790,3 +790,19 @@ h2,.head h2,.cta h2,.offer h2,.news h2,.ccta h2,.cta-wrap h2{font-size:34px!impo
   .container,.section.container{padding-left:48px!important;padding-right:48px!important}
   .container{max-width:1296px}
 }
+
+/* ===== Mobile hero visual: compact ===== */
+@media (max-width:640px){
+  .hero__art,.chero__art{height:290px!important;margin-top:0!important}
+  .hero,.chero{padding-top:16px!important}
+  .fcard,.float-card,.hcard,.hbadge{transform:scale(.9);transform-origin:center}
+}
+@media (max-width:640px){.hero__photo{width:min(230px,64%)!important}.hero__ring{width:min(280px,80%)!important}}
+
+/* ===== Mobile spacing: cards never touch ===== */
+@media (max-width:640px){
+  .sgrid,.scards,.grid,.docs,.plans,.tiers,.tests,.team,.members,.products,.services,.reviews-grid,.journey,.process,.trust,.how__grid,.pricing,.steps-grid,.about__points,.feat,.feats,.cards{gap:16px!important}
+  .trust{display:grid!important;grid-template-columns:1fr!important}
+  .head + *{margin-top:0}
+  .reveal + .reveal{margin-top:0}
+}

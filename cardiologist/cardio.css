@@ -310,3 +310,4 @@ h1,h2,h3{letter-spacing:-.035em}
 /* ===== Hero: more space above the badge ===== */
 @media (min-width:1081px){.chero{padding-top:96px!important}}
 .chero__art .fcard--c{display:none!important}
+@media (max-width:640px){.chero__art{height:auto!important}}

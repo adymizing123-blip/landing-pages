@@ -321,3 +321,4 @@ h2{letter-spacing:-.03em}
 .faq__img{border-radius:24px}
 @media (max-width:640px){.chero__art{height:380px!important}.chero__frame{width:min(250px,70%)!important}}
 @media (max-width:900px){.chero::before{display:none!important}}
+@media (max-width:640px){.xray{width:min(210px,60%)!important;height:auto!important;aspect-ratio:3/4}}

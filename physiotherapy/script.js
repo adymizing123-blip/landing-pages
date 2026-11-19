@@ -441,3 +441,22 @@ $('#year').textContent = new Date().getFullYear();
     steps.forEach(s => io.observe(s));
   }
 })();
+
+/* Marquee: repeat logos so the strip never runs out on wide screens */
+(() => {
+  document.querySelectorAll('.marquee__track,.brands__track,.insure__track').forEach(track => {
+    const box = track.parentElement;
+    const base = [...track.children].filter(el => el.getAttribute('aria-hidden') !== 'true');
+    if (!base.length) return;
+    const build = () => {
+      track.innerHTML = '';
+      base.forEach(el => track.appendChild(el.cloneNode(true)));
+      let guard = 0;
+      while (track.scrollWidth < box.clientWidth + 200 && guard++ < 12) base.forEach(el => { const c = el.cloneNode(true); c.setAttribute('aria-hidden', 'true'); track.appendChild(c); });
+      [...track.children].forEach(el => { const c = el.cloneNode(true); c.setAttribute('aria-hidden', 'true'); track.appendChild(c); });
+      track.style.animationDuration = Math.max(20, Math.round(track.scrollWidth / 2 / 60)) + 's';
+    };
+    build();
+    let t; window.addEventListener('resize', () => { clearTimeout(t); t = setTimeout(build, 250); });
+  });
+})();

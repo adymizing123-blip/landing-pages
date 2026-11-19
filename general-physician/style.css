@@ -795,3 +795,40 @@ h2,.head h2,.cta h2,.offer h2,.news h2,.ccta h2,.cta-wrap h2{font-size:34px!impo
   .about__nums{grid-template-columns:repeat(3,max-content)!important;column-gap:48px!important;justify-content:start}
   .about__nums strong{font-size:36px!important;white-space:nowrap}
 }
+
+/* ===== Mobile hero visual: compact ===== */
+@media (max-width:640px){
+  .hero__art,.chero__art{height:290px!important;margin-top:0!important}
+  .hero,.chero{padding-top:16px!important}
+  .fcard,.float-card,.hcard,.hbadge{transform:scale(.9);transform-origin:center}
+}
+@media (max-width:640px){.doc-card{width:min(200px,56%)!important}.doc-card__body{padding:12px 14px!important}.doc-card__body strong{font-size:16px!important}}
+
+/* ===== Emergency bar: one line on mobile ===== */
+.eb-short{display:none}
+@media (max-width:640px){
+  .ebar__inner{padding-block:9px!important}
+  .ebar p{display:flex!important;align-items:center;justify-content:center;gap:5px;white-space:nowrap;font-size:12.5px!important;line-height:1.3!important}
+  .ebar p strong{display:inline!important;margin:0!important}
+  .ebar p svg{flex:none;margin:0!important}
+  .eb-long{display:none}.eb-short{display:inline}
+}
+@media (max-width:359px){.ebar p{font-size:11.5px!important}}
+
+/* ===== Emergency bar: one line on mobile ===== */
+.eb-short{display:none}
+@media (max-width:640px){
+  .ebar__inner{min-height:0!important;padding-block:8px!important}
+  .ebar p{display:flex!important;align-items:center;justify-content:center;gap:6px;white-space:nowrap;font-size:13px!important}
+  .ebar p strong{display:inline!important;margin:0!important}
+  .eb-long{display:none}.eb-short{display:inline}
+}
+
+/* ===== Mobile spacing: cards never touch ===== */
+@media (max-width:640px){
+  .sgrid,.scards,.grid,.docs,.plans,.tiers,.tests,.team,.members,.products,.services,.reviews-grid,.journey,.process,.trust,.how__grid,.pricing,.steps-grid,.about__points,.feat,.feats,.cards{gap:16px!important}
+  .trust{display:grid!important;grid-template-columns:1fr!important}
+  .head + *{margin-top:0}
+  .reveal + .reveal{margin-top:0}
+}
+@media (max-width:640px){.ebar p{font-size:12px!important;gap:5px!important}.ebar__inner{padding-inline:12px!important}}

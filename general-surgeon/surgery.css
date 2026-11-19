@@ -330,3 +330,6 @@ h2{font-size:clamp(32px,4vw,50px)}
   .sp__ring strong{top:calc(12px + 22px);left:50%!important;transform:translateX(-50%)}
   .sp__ring::after{margin:2px 0 0}
 }
+@media (max-width:640px){.chero .hero__art{height:auto!important}}
+@media (max-width:640px){.splan{padding:18px!important}.sp__row{display:none!important}.splan .fcard{display:none!important}}
+@media (max-width:640px){.chero__art .fcard,.chero .hero__art .fcard{display:none!important}}

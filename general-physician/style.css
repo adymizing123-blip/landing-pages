@@ -832,3 +832,5 @@ h2,.head h2,.cta h2,.offer h2,.news h2,.ccta h2,.cta-wrap h2{font-size:34px!impo
   .reveal + .reveal{margin-top:0}
 }
 @media (max-width:640px){.ebar p{font-size:12px!important;gap:5px!important}.ebar__inner{padding-inline:12px!important}}
+.faq__list.faq--cols{align-items:start}
+.faq__col{display:flex;flex-direction:column;gap:inherit;row-gap:12px;min-width:0}

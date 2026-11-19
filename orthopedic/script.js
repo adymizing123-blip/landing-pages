@@ -484,3 +484,23 @@ $('#year').textContent = new Date().getFullYear();
   };
   new MutationObserver(sync).observe(m, { attributes: true, attributeFilter: ['class'] });
 })();
+
+/* FAQ: two independent columns, so opening one question never moves the other column */
+(() => {
+  const list = document.getElementById('faqList');
+  if (!list) return;
+  const items = [...list.querySelectorAll(':scope > .qa, :scope > .faq__col > .qa')];
+  if (!items.length) return;
+  const layout = () => {
+    const flat = () => { items.forEach(q => list.appendChild(q)); list.querySelectorAll('.faq__col').forEach(c => c.remove()); list.classList.remove('faq--cols'); };
+    flat();
+    const cols = getComputedStyle(list).gridTemplateColumns.split(' ').filter(Boolean).length;
+    if (getComputedStyle(list).display !== 'grid' || cols < 2) return;
+    const a = document.createElement('div'), b = document.createElement('div');
+    a.className = b.className = 'faq__col';
+    items.forEach((q, i) => (i % 2 ? b : a).appendChild(q));
+    list.append(a, b); list.classList.add('faq--cols');
+  };
+  layout();
+  let t; window.addEventListener('resize', () => { clearTimeout(t); t = setTimeout(layout, 200); });
+})();

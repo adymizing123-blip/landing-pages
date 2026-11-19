@@ -1,0 +1,336 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Glow Skin | Skincare Clinic &amp; Shop</title>
+<meta name="description" content="Science-backed skincare products and clinic treatments. Book your skin consultation today.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ============ NAVBAR ============ -->
+<header class="nav" id="nav">
+  <div class="container nav__inner">
+    <a href="#top" class="logo">Glow<em> skin</em></a>
+
+    <nav class="nav__menu" id="menu" aria-label="Main">
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#shop">Shop</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#contact">Contact Us</a>
+      <button type="button" class="btn btn--dark nav__cta-mobile" data-open-booking>Book an Appointment</button>
+    </nav>
+
+    <div class="nav__right">
+      <button type="button" class="btn btn--dark nav__cta" data-open-booking>Book an Appointment</button>
+      <button type="button" class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- ============ HERO ============ -->
+<section class="hero container">
+  <div class="hero__text">
+    <p class="pill fade d1">Clean · Gentle · Dermatologist designed</p>
+    <h1 class="fade d2">Skin that glows <em>from within.</em></h1>
+    <p class="lead fade d3">Science-backed skincare and expert clinic treatments. Hydrate, repair and protect your skin with a routine made for you.</p>
+    <div class="hero__btns fade d4">
+      <button type="button" class="btn btn--dark btn--lg" data-open-booking>
+        Book an Appointment
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </button>
+      <a href="#shop" class="btn btn--ghost btn--lg">Shop Products</a>
+    </div>
+    <ul class="hero__stats fade d4">
+      <li><strong>5,000+</strong><span>Happy clients</span></li>
+      <li><strong>10 yrs</strong><span>Experience</span></li>
+      <li><strong>100%</strong><span>Cruelty free</span></li>
+    </ul>
+  </div>
+
+  <div class="hero__art fade d3" aria-hidden="true">
+    <div class="blob pulse"></div>
+    <svg class="ring spin" viewBox="0 0 200 200"><defs><path id="circ" d="M100,100 m-88,0 a88,88 0 1,1 176,0 a88,88 0 1,1 -176,0"/></defs><text font-family="Inter" font-size="8.5" letter-spacing="4" fill="#2F4A3C"><textPath href="#circ">HYDRATE · REPAIR · PROTECT · GLOW · HYDRATE · REPAIR · PROTECT · GLOW ·</textPath></text></svg>
+    <svg class="bottle floatA" viewBox="0 0 120 240">
+      <defs><linearGradient id="g1" x1="0" x2="1"><stop offset="0" stop-color="#fff" stop-opacity=".25"/><stop offset="1" stop-color="#2F4A3C" stop-opacity=".18"/></linearGradient></defs>
+      <rect x="48" y="6" width="24" height="44" rx="8" fill="#1E3328"/>
+      <rect x="44" y="46" width="32" height="14" rx="3" fill="#2F4A3C"/>
+      <rect x="22" y="58" width="76" height="172" rx="24" fill="#C9D6CC"/>
+      <rect x="22" y="58" width="76" height="172" rx="24" fill="url(#g1)"/>
+      <rect x="32" y="120" width="56" height="64" rx="6" fill="#F6F3EE"/>
+      <text x="60" y="146" text-anchor="middle" font-family="Instrument Serif" font-size="14" fill="#1E3328">Serum</text>
+      <text x="60" y="164" text-anchor="middle" font-family="Inter" font-size="6" letter-spacing="1.5" fill="#4A5852">NIACINAMIDE</text>
+      <rect x="30" y="70" width="8" height="120" rx="4" fill="#fff" opacity=".45"/>
+    </svg>
+    <img class="photo hero__photo" src="https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?auto=format&fit=crop&q=80&w=900" alt="Amber serum dropper bottle on a pedestal" loading="lazy" decoding="async" onerror="this.remove()">
+    <svg class="jar floatB" viewBox="0 0 120 120">
+      <rect x="14" y="24" width="92" height="26" rx="8" fill="#A8664F"/>
+      <rect x="10" y="46" width="100" height="62" rx="16" fill="#F1E4DC"/>
+      <rect x="28" y="62" width="64" height="30" rx="5" fill="#fff" opacity=".85"/>
+      <text x="60" y="82" text-anchor="middle" font-family="Instrument Serif" font-size="13" fill="#1E3328">Cream</text>
+      <rect x="16" y="54" width="6" height="44" rx="3" fill="#fff" opacity=".6"/>
+    </svg>
+  </div>
+</section>
+
+<!-- ============ MARQUEE ============ -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee__track">
+    <span>Fragrance free</span><i>✦</i><span>Vegan formulas</span><i>✦</i><span>Cruelty free</span><i>✦</i><span>Barrier friendly</span><i>✦</i><span>Recyclable glass</span><i>✦</i>
+    <span>Fragrance free</span><i>✦</i><span>Vegan formulas</span><i>✦</i><span>Cruelty free</span><i>✦</i><span>Barrier friendly</span><i>✦</i><span>Recyclable glass</span><i>✦</i>
+  </div>
+</div>
+
+<!-- ============ ABOUT ============ -->
+<section id="about" class="section container about">
+  <div class="about__art reveal" aria-hidden="true">
+    <div class="about__card about__card--a">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7l8-4Z"/></svg>
+      <strong>Certified experts</strong>
+    </div>
+    <div class="about__card about__card--b">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21V9"/><path d="M12 13c-4 0-7-3-7-8 4 0 7 3 7 8Z"/><path d="M12 11c0-4 3-7 7-7 0 4-3 7-7 7Z"/></svg>
+      <strong>Botanical actives</strong>
+    </div>
+    <div class="about__circle pulse"></div>
+    <img class="photo" src="https://images.unsplash.com/photo-1619451427882-6aaaded0cc61?auto=format&fit=crop&q=80&w=1000" alt="Hands applying lotion from a pump bottle" loading="lazy" decoding="async" onerror="this.remove()">
+  </div>
+  <div class="about__text reveal">
+    <p class="eyebrow">About us</p>
+    <h2>Real results, <em>gentle care</em></h2>
+    <p>We are a skincare clinic and product studio built on one idea: healthy skin should feel simple. Our certified skin experts combine clinical treatments with clean, effective formulas, so every client leaves with a routine that actually works.</p>
+    <ul class="checks">
+      <li>Personalised skin analysis for every client</li>
+      <li>Dermatologist designed, clinically tested formulas</li>
+      <li>Safe treatments for all skin types and tones</li>
+    </ul>
+    <a href="#services" class="btn btn--ghost">Explore Services</a>
+  </div>
+</section>
+
+<!-- ============ SERVICES ============ -->
+<section id="services" class="section section--tint">
+  <div class="container">
+    <div class="head reveal center">
+      <p class="eyebrow">Our services</p>
+      <h2>Clinic <em>treatments</em></h2>
+      <p class="sub">Choose a treatment, see the price and book your slot in seconds.</p>
+    </div>
+    <div class="grid grid--3" id="servicesGrid"><!-- filled by script.js --></div>
+  </div>
+</section>
+
+<!-- ============ PRODUCTS ============ -->
+<section id="shop" class="section container">
+  <div class="head head--split reveal">
+    <div>
+      <p class="eyebrow">Bestsellers</p>
+      <h2>The essentials <em>ritual</em></h2>
+    </div>
+    <p class="sub">Three products, one routine. Hover a card for price and details.</p>
+  </div>
+  <div class="grid grid--3" id="productsGrid"><!-- filled by script.js --></div>
+</section>
+
+<!-- ============ ROUTINE ============ -->
+<section class="section section--tint">
+  <div class="container routine">
+    <div class="reveal">
+      <p class="eyebrow">Your daily ritual</p>
+      <h2>Three steps. <em>Five minutes.</em></h2>
+      <p class="sub">No 12-step routines. Just the essentials your skin actually needs, morning and night.</p>
+    </div>
+    <div class="steps">
+      <div class="step reveal"><span class="step__num">01</span><div><h3>Cleanse</h3><p>Massage the gel cleanser onto damp skin and rinse.</p></div></div>
+      <div class="step reveal"><span class="step__num">02</span><div><h3>Treat</h3><p>Press 3 to 4 drops of serum into face and neck.</p></div></div>
+      <div class="step reveal"><span class="step__num">03</span><div><h3>Moisturise</h3><p>Seal everything in with the barrier cream.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PRICING ============ -->
+<section id="pricing" class="section container">
+  <div class="head reveal center">
+    <p class="eyebrow">Pricing</p>
+    <h2>Pick your <em>plan</em></h2>
+    <p class="sub">Start with one product or save more with the full ritual.</p>
+  </div>
+  <div class="grid grid--3 pricing">
+    <div class="tier reveal">
+      <h3>Single product</h3>
+      <p class="tier__desc">Try any one product</p>
+      <p class="tier__price">Rs 2,499<small> onwards</small></p>
+      <ul class="checks">
+        <li>Choose any 1 product</li>
+        <li>Free skin type guide</li>
+        <li>Standard delivery</li>
+      </ul>
+      <a href="#shop" class="btn btn--ghost btn--block">Shop Now</a>
+    </div>
+    <div class="tier tier--featured reveal">
+      <span class="badge">Most popular</span>
+      <h3>Essentials ritual set</h3>
+      <p class="tier__desc">Cleanser, serum and cream</p>
+      <p class="tier__price">Rs 8,999 <s>Rs 9,997</s></p>
+      <ul class="checks checks--light">
+        <li>All 3 full-size products</li>
+        <li>Save 10% vs buying single</li>
+        <li>Free delivery</li>
+        <li>Gift-ready box</li>
+      </ul>
+      <button type="button" class="btn btn--blush btn--block" data-add="3">Add Set to Bag</button>
+    </div>
+    <div class="tier reveal">
+      <h3>Glow membership</h3>
+      <p class="tier__desc">Products + monthly facial</p>
+      <p class="tier__price">Rs 11,999<small> /month</small></p>
+      <ul class="checks">
+        <li>Full ritual refill every month</li>
+        <li>1 deep cleansing facial</li>
+        <li>Pause or cancel anytime</li>
+      </ul>
+      <button type="button" class="btn btn--ghost btn--block" data-open-booking data-service="Glow membership">Join Now</button>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TESTIMONIALS ============ -->
+<!-- NOTE: sample reviews for layout only. Replace with real customer reviews before going live. -->
+<section id="reviews" class="section section--tint">
+  <div class="container">
+    <div class="head head--split reveal">
+      <div>
+        <p class="eyebrow">Reviews</p>
+        <h2>Loved by <em>real skin</em></h2>
+      </div>
+      <p class="sub"><span class="stars">★★★★★</span> 4.9 average rating</p>
+    </div>
+    <div class="grid grid--3">
+      <figure class="tcard reveal">
+        <span class="tcard__quote" aria-hidden="true">“</span>
+        <span class="stars" aria-label="5 out of 5 stars">★★★★★</span>
+        <blockquote>My skin feels softer and calmer after a few weeks of the full ritual. The consultation helped me understand what my skin needs.</blockquote>
+        <figcaption><span class="avatar" style="background:#E8C9BC">A</span><span><strong>Client name</strong><small>Lahore · Ritual set</small></span></figcaption>
+      </figure>
+      <figure class="tcard reveal">
+        <span class="tcard__quote" aria-hidden="true">“</span>
+        <span class="stars" aria-label="5 out of 5 stars">★★★★★</span>
+        <blockquote>The HydraFacial was so relaxing and my skin was glowing for days. The team is friendly and very professional.</blockquote>
+        <figcaption><span class="avatar" style="background:#C9D6CC">S</span><span><strong>Client name</strong><small>Karachi · HydraFacial</small></span></figcaption>
+      </figure>
+      <figure class="tcard reveal">
+        <span class="tcard__quote" aria-hidden="true">“</span>
+        <span class="stars" aria-label="5 out of 5 stars">★★★★★</span>
+        <blockquote>Finally a cream that does not break me out. Gentle, really hydrating, and it lasts a long time.</blockquote>
+        <figcaption><span class="avatar" style="background:#E9E1D6">M</span><span><strong>Client name</strong><small>Islamabad · Barrier Cream</small></span></figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section id="contact" class="section container contact">
+  <div class="contact__info reveal">
+    <p class="eyebrow">Contact us</p>
+    <h2>Visit our <em>clinic</em></h2>
+    <p class="sub">Walk in for a free skin check, or send us a message and our team will get back to you.</p>
+    <div class="ccards">
+      <div class="ccard"><span class="ccard__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 21s-7-6.2-7-12a7 7 0 0 1 14 0c0 5.8-7 12-7 12Z"/><circle cx="12" cy="9" r="2.5"/></svg></span><span><small>Clinic address</small>Shop 12, Main Boulevard, Gulberg III, Lahore</span></div>
+      <a class="ccard" href="tel:+923001234567"><span class="ccard__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2Z"/></svg></span><span><small>Phone / WhatsApp</small>+92 300 1234567</span></a>
+      <a class="ccard" href="mailto:hello@glowskin.pk"><span class="ccard__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></span><span><small>Email</small>hello@glowskin.pk</span></a>
+      <div class="ccard"><span class="ccard__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><span><small>Opening hours</small>Mon to Sat, 11:00 am to 9:00 pm</span></div>
+    </div>
+  </div>
+
+  <div class="contact__side reveal">
+    <div class="map" role="img" aria-label="Map placeholder for clinic location">
+      <svg viewBox="0 0 400 220" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><path d="M0 70 H400 M0 150 H400 M90 0 V220 M250 0 V220 M0 220 L180 0" stroke="#F6F3EE" stroke-width="10" fill="none"/><path d="M320 0 Q300 110 400 160" stroke="#C9D6CC" stroke-width="18" fill="none"/></svg>
+      <span class="map__pin"></span>
+      <span class="map__label">Replace with Google Maps embed</span>
+    </div>
+    <form class="form" id="contactForm">
+      <label>Name<input type="text" name="name" required></label>
+      <label>Phone<input type="tel" name="phone"></label>
+      <label class="full">Message<textarea name="message" rows="4" required></textarea></label>
+      <button type="submit" class="btn btn--dark btn--block full">Send Message</button>
+      <p class="form__ok full" hidden>Thanks! We'll get back to you within 24 hours.</p>
+    </form>
+  </div>
+</section>
+
+<!-- ============ CTA ============ -->
+<section class="cta-wrap">
+  <div class="container">
+    <div class="cta reveal">
+      <div class="cta__blob cta__blob--a pulse" aria-hidden="true"></div>
+      <div class="cta__blob cta__blob--b pulse" aria-hidden="true"></div>
+      <h2>Ready for your <em>best skin?</em></h2>
+      <p>Book a 30-minute consultation and get a personalised routine. First consultation is 50% off this month.</p>
+      <button type="button" class="btn btn--blush btn--lg" data-open-booking>Book an Appointment</button>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="container footer__inner">
+    <a href="#top" class="logo">Glow<em> skin</em></a>
+    <nav aria-label="Footer"><a href="#about">About</a><a href="#services">Services</a><a href="#pricing">Pricing</a><a href="#contact">Contact Us</a></nav>
+    <span>© <span id="year">2026</span> Glow Skin. All rights reserved.</span>
+  </div>
+</footer>
+
+<!-- ============ BAG TOAST ============ -->
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<!-- ============ BOOKING MODAL ============ -->
+<div class="modal" id="booking" hidden>
+  <div class="modal__overlay" data-close-booking></div>
+  <div class="modal__box" role="dialog" aria-modal="true" aria-labelledby="bookingTitle">
+    <button type="button" class="modal__close" aria-label="Close" data-close-booking>
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+    <div id="bookingFormWrap">
+      <p class="eyebrow">Book an appointment</p>
+      <h2 id="bookingTitle">Reserve your <em>slot</em></h2>
+      <form class="form" id="bookingForm">
+        <label class="full">Full name<input type="text" name="name" required autocomplete="name"></label>
+        <label>Phone<input type="tel" name="phone" required autocomplete="tel" placeholder="03XX XXXXXXX"></label>
+        <label>Email<input type="email" name="email" autocomplete="email"></label>
+        <label class="full">Service
+          <select name="service" id="serviceSelect" required></select>
+        </label>
+        <label>Date<input type="date" name="date" id="dateInput" required></label>
+        <label>Time
+          <select name="time" required>
+            <option value="">Select time</option>
+            <option>11:00 am</option><option>12:00 pm</option><option>1:00 pm</option><option>3:00 pm</option>
+            <option>4:00 pm</option><option>5:00 pm</option><option>6:00 pm</option><option>7:00 pm</option>
+          </select>
+        </label>
+        <button type="submit" class="btn btn--dark btn--block full">Confirm Booking</button>
+      </form>
+    </div>
+    <div class="booked" id="bookedMsg" hidden>
+      <span class="booked__ic"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg></span>
+      <h2>You're <em>booked!</em></h2>
+      <p id="bookedText"></p>
+      <button type="button" class="btn btn--ghost" data-close-booking>Done</button>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

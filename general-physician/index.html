@@ -1,0 +1,475 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CarePoint Family Clinic | General Physician &amp; Family Doctor</title>
+<meta name="description" content="Trusted family doctors for check-ups, illness, chronic conditions, vaccinations and health screenings. Same-day, video and home visit appointments.">
+<meta name="theme-color" content="#0F2A4A">
+<meta property="og:title" content="CarePoint Family Clinic | Your family doctor, when you need one">
+<meta property="og:description" content="Same-day GP appointments in clinic, by video or at home.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "MedicalClinic",
+  "medicalSpecialty": "PrimaryCare",
+  "name": "CarePoint Family Clinic",
+  "telephone": "+1-555-246-8100",
+  "email": "hello@carepointclinic.com",
+  "address": {"@type": "PostalAddress","streetAddress": "210 Main Street, Suite 2","addressLocality": "Columbus","addressRegion": "OH","postalCode": "43215","addressCountry": "US"},
+  "openingHours": ["Mo-Fr 08:00-20:00","Sa 09:00-15:00"],
+  "priceRange": "$$"
+}
+</script>
+</head>
+<body>
+<a href="#main" class="skip">Skip to content</a>
+
+<!-- ===== EMERGENCY BAR ===== -->
+<div class="ebar" role="note">
+  <div class="container ebar__inner">
+    <p><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M12 3l10 18H2Z"/><path d="M12 10v5M12 18h.01"/></svg> Medical emergency? Chest pain, trouble breathing or stroke signs: <strong>call 911 now</strong>.</p>
+    <a href="#after-hours" class="ebar__link">After-hours care</a>
+  </div>
+</div>
+
+<!-- ===== NAVBAR ===== -->
+<header class="nav" id="nav">
+  <div class="container nav__inner">
+    <a href="#top" class="logo" aria-label="CarePoint Family Clinic home">
+      <span class="logo__mark" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M12 5h8v7h7v8h-7v7h-8v-7H5v-8h7Z" fill="currentColor"/></svg></span>
+      <span class="logo__text">CarePoint<small>Family Clinic</small></span>
+    </a>
+    <nav class="menu" id="menu" aria-label="Main">
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#doctors">Doctors</a>
+      <a href="#packages">Pricing</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contact">Contact Us</a>
+      <div class="menu__foot">
+        <button type="button" class="btn btn--blue btn--block" data-book>Book an Appointment</button>
+        <button type="button" class="btn btn--line btn--block" data-rx>Request Prescription</button>
+        <a href="tel:+15552468100" class="btn btn--ghost btn--block">Call (555) 246-8100</a>
+      </div>
+    </nav>
+    <div class="nav__right">
+      <button type="button" class="btn btn--ghost nav__rx" data-rx>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="4" y="9" width="16" height="6" rx="3" transform="rotate(-45 12 12)"/><path d="M9 9l6 6"/></svg>
+        Prescriptions
+      </button>
+      <button type="button" class="btn btn--blue nav__cta" data-book>Book an Appointment</button>
+      <button type="button" class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- ===== HERO ===== -->
+<section class="hero" id="top">
+  <div class="container hero__grid">
+    <div class="hero__copy">
+      <p class="status fade d1"><span class="live" aria-hidden="true"></span> Open today · Current wait time <strong id="waitTime">~15 min</strong></p>
+      <h1 class="fade d2">Your family doctor, <span class="u">when you need one.</span></h1>
+      <p class="lead fade d3">Trusted general physicians for the whole family. Same-day appointments for illness, routine check-ups, chronic care and vaccinations, in clinic, by video or at home.</p>
+      <div class="hero__btns fade d4">
+        <button type="button" class="btn btn--blue btn--lg" data-book>Book an Appointment
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </button>
+        <a href="#helper" class="btn btn--line btn--lg">Which visit do I need?</a>
+      </div>
+      <div class="modes fade d4">
+        <button type="button" class="mode" data-book data-mode="In clinic"><span class="mode__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 21V8l9-5 9 5v13"/><path d="M10 21v-6h4v6M12 8v4M10 10h4"/></svg></span><span><strong>In clinic</strong><small>From $95</small></span></button>
+        <button type="button" class="mode" data-book data-mode="Video call"><span class="mode__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="2" y="6" width="14" height="12" rx="2"/><path d="M16 10l6-3v10l-6-3"/></svg></span><span><strong>Video call</strong><small>From $65</small></span></button>
+        <button type="button" class="mode" data-book data-mode="Home visit"><span class="mode__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6h-6v6H4a1 1 0 0 1-1-1Z"/></svg></span><span><strong>Home visit</strong><small>From $180</small></span></button>
+      </div>
+    </div>
+
+    <div class="hero__art fade d3" aria-hidden="true">
+      <div class="hero__bg"></div>
+      <div class="doc-card">
+        <div class="doc-card__photo">
+          <svg viewBox="0 0 240 240">
+            <rect width="240" height="240" fill="#DCE7FB"/>
+            <path d="M40 240c0-52 36-80 80-80s80 28 80 80Z" fill="#fff"/>
+            <path d="M92 168l28 52 28-52" fill="#DCE7FB"/>
+            <path d="M104 150h32v22h-32Z" fill="#E7BFA2"/>
+            <path d="M120 40c-32 0-52 24-52 58 0 38 24 62 52 62s52-24 52-62c0-34-20-58-52-58Z" fill="#E7BFA2"/>
+            <path d="M66 96c-4-40 20-62 54-62 36 0 58 24 52 64-10-22-30-34-52-34-24 0-44 12-54 32Z" fill="#2C2320"/>
+            <circle cx="102" cy="104" r="4" fill="#2C2320"/><circle cx="138" cy="104" r="4" fill="#2C2320"/>
+            <path d="M108 130q12 8 24 0" stroke="#A35D50" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+            <path d="M84 176c-6 20 0 34 14 36M98 212a8 8 0 1 0 0-1" stroke="#0F2A4A" stroke-width="4" fill="none" stroke-linecap="round"/>
+          </svg>
+          <img class="photo" src="https://images.unsplash.com/photo-1638202993928-7267aad84c31?auto=format&fit=crop&q=80&w=700" alt="Family doctor holding a stethoscope" loading="lazy" decoding="async" onerror="this.remove()">
+        </div>
+        <div class="doc-card__body">
+          <strong>Dr. Rachel Morgan</strong><span>Family Physician, MD</span>
+          <p class="avail"><span class="live" aria-hidden="true"></span> Next available: Today, 2:30 PM</p>
+        </div>
+      </div>
+      <div class="fcard fcard--a floatA"><span class="fcard__ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-8-5-8-11a4.5 4.5 0 0 1 8-2.8A4.5 4.5 0 0 1 20 10c0 6-8 11-8 11Z"/></svg></span><span><small>Heart rate</small><strong>72 bpm</strong></span>
+        <svg class="ecg" viewBox="0 0 120 30"><path d="M0 15h30l6-10 6 20 6-14 4 4h68" fill="none" stroke="#2F6FED" stroke-width="2.2" stroke-linejoin="round"/></svg>
+      </div>
+      <div class="fcard fcard--b floatB"><span class="fcard__ic fcard__ic--green"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12l5 5 9-10"/></svg></span><span><small>Insurance</small><strong>Most plans accepted</strong></span></div>
+      <div class="fcard fcard--c floatA"><span class="stars">★★★★★</span><span><strong>4.9</strong> from 2,300+ patients</span></div>
+    </div>
+  </div>
+
+  <div class="container">
+    <ul class="trust reveal">
+      <li><span class="trust__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><span><strong>Same-day</strong> appointments</span></li>
+      <li><span class="trust__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7l8-4Z"/></svg></span><span><strong>Board-certified</strong> physicians</span></li>
+      <li><span class="trust__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2.5"/><path d="M3 20c0-4 3-6 6-6s6 2 6 6M15 20c0-3 1.5-5 4-5s3 1.5 3 4"/></svg></span><span><strong>All ages</strong>, babies to seniors</span></li>
+      <li><span class="trust__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M2 12h4l3-8 4 16 3-8h6"/></svg></span><span><strong>On-site</strong> lab &amp; ECG</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ===== ABOUT ===== -->
+<section class="section container about" id="about">
+  <div class="about__copy reveal">
+    <p class="eyebrow">About the clinic</p>
+    <h2>Complete primary care, <span class="u">under one roof</span></h2>
+    <p>For over 18 years, CarePoint has been the first stop for families in our community. Our doctors take time to listen, explain clearly and coordinate everything from lab tests to specialist referrals, so you never feel lost in the system.</p>
+    <ul class="checks">
+      <li>Continuity of care with the same doctor every visit</li>
+      <li>On-site blood tests, ECG and basic imaging referrals</li>
+      <li>Secure patient portal for results and prescriptions</li>
+      <li>Fast, friendly referrals to trusted specialists</li>
+    </ul>
+    <div class="about__nums">
+      <div><strong data-count="18">0</strong><span>Years serving families</span></div>
+      <div><strong data-count="25000" data-suffix="+">0</strong><span>Registered patients</span></div>
+      <div><strong data-count="9">0</strong><span>Doctors &amp; nurses</span></div>
+    </div>
+  </div>
+  <div class="about__visual reveal" aria-hidden="true">
+    <div class="about__card about__card--main">
+      <div class="about__banner"><img class="photo" src="https://images.unsplash.com/photo-1758691463331-2ac00e6f676f?auto=format&fit=crop&q=80&w=1000" alt="Doctor examining a young boy with his mother present" loading="lazy" decoding="async" onerror="this.parentNode.remove()"></div>
+      <p class="about__card-t">Today's clinic</p>
+      <ul class="timeline">
+        <li><span>8:00</span><p>Clinic opens · walk-in triage</p></li>
+        <li><span>9:30</span><p>Child vaccinations</p></li>
+        <li class="now"><span>12:00</span><p>Same-day appointments</p></li>
+        <li><span>4:00</span><p>Chronic care reviews</p></li>
+        <li><span>6:00</span><p>Evening &amp; video clinic</p></li>
+      </ul>
+    </div>
+    <div class="about__card about__card--mini floatB"><strong>98%</strong><span>of patients seen within 24 hours</span></div>
+  </div>
+</section>
+
+<!-- ===== SERVICES ===== -->
+<section class="section section--tint" id="services">
+  <div class="container">
+    <div class="head head--split reveal">
+      <div><p class="eyebrow">Our services</p><h2>Care for every <span class="u">stage of life</span></h2></div>
+      <p class="sub">What each service includes, typical visit length and price.</p>
+    </div>
+    <div class="tabs reveal" role="tablist" aria-label="Filter services" id="tabs">
+      <button type="button" role="tab" aria-selected="true" data-filter="all">All services</button>
+      <button type="button" role="tab" aria-selected="false" data-filter="everyday">Everyday care</button>
+      <button type="button" role="tab" aria-selected="false" data-filter="prevent">Prevention</button>
+      <button type="button" role="tab" aria-selected="false" data-filter="chronic">Long-term care</button>
+      <button type="button" role="tab" aria-selected="false" data-filter="family">Family &amp; women</button>
+    </div>
+    <div class="sgrid" id="sgrid"></div>
+  </div>
+</section>
+
+<!-- ===== HELPER: WHICH APPOINTMENT ===== -->
+<section class="section container" id="helper">
+  <div class="helper reveal">
+    <div class="helper__intro">
+      <p class="eyebrow">Not sure what to book?</p>
+      <h2>Find the <span class="u">right visit</span> in 2 taps</h2>
+      <p class="sub">Answer two quick questions and we'll suggest the best appointment type. This is a booking guide, not a diagnosis.</p>
+      <div class="redflag">
+        <h3><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M12 3l10 18H2Z"/><path d="M12 10v5M12 18h.01"/></svg> Call 911 or go to the ER if you have:</h3>
+        <ul><li>Chest pain or pressure</li><li>Severe trouble breathing</li><li>Face drooping, arm weakness, slurred speech</li><li>Heavy bleeding or a serious injury</li></ul>
+      </div>
+    </div>
+    <div class="helper__box" id="helperBox">
+      <p class="label">1. What do you need help with?</p>
+      <div class="opts" id="needOpts"></div>
+      <p class="label label--mt">2. How soon do you need to be seen?</p>
+      <div class="opts opts--3" id="urgOpts"></div>
+      <div class="result" id="helperResult" aria-live="polite">
+        <p class="result__empty">Choose an option above to see our recommendation.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== DOCTORS ===== -->
+<section class="section section--tint" id="doctors">
+  <div class="container">
+    <div class="head head--split reveal">
+      <div><p class="eyebrow">Our doctors</p><h2>Meet your <span class="u">care team</span></h2></div>
+      <p class="sub">Choose a doctor you feel comfortable with and see them every time.</p>
+    </div>
+    <div class="docs" id="docGrid"></div>
+  </div>
+</section>
+
+<!-- ===== HOW IT WORKS ===== -->
+<section class="section container" id="how">
+  <div class="head center reveal">
+    <p class="eyebrow">How it works</p>
+    <h2>Seeing a doctor, <span class="u">made simple</span></h2>
+  </div>
+  <ol class="how">
+    <li class="reveal"><span class="how__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg></span><h3>Book in 60 seconds</h3><p>Online, by phone or walk in for urgent care.</p></li>
+    <li class="reveal"><span class="how__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M8 3h8v4H8Z"/><path d="M16 5h2a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h2M9 12h6M9 16h4"/></svg></span><h3>Quick check-in</h3><p>Fill your forms online before you arrive.</p></li>
+    <li class="reveal"><span class="how__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M6 3v6a4 4 0 0 0 8 0V3"/><path d="M10 13v3a5 5 0 0 0 10 0v-2"/><circle cx="20" cy="12" r="2"/></svg></span><h3>See your doctor</h3><p>Unhurried consultation, exam and clear next steps.</p></li>
+    <li class="reveal"><span class="how__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="5" y="2" width="14" height="20" rx="3"/><path d="M9 18h6M9 8l2 2 4-4"/></svg></span><h3>Follow-up online</h3><p>Results, prescriptions and messages in your portal.</p></li>
+  </ol>
+</section>
+
+<!-- ===== PACKAGES / PRICING ===== -->
+<section class="section section--navy" id="packages">
+  <div class="container">
+    <div class="head center reveal">
+      <p class="eyebrow eyebrow--light">Pricing</p>
+      <h2>Clear prices, <span class="u u--light">no surprises</span></h2>
+      <div class="toggle" role="group" aria-label="Price type">
+        <button type="button" class="active" data-ptab="visits" aria-pressed="true">Consultations</button>
+        <button type="button" data-ptab="checks" aria-pressed="false">Health check-ups</button>
+      </div>
+    </div>
+    <div class="plans" id="plans"></div>
+    <p class="plans__note reveal">Self-pay prices shown. If you have insurance, you'll usually only pay your co-pay. HSA/FSA accepted.</p>
+  </div>
+</section>
+
+<!-- ===== TESTIMONIALS ===== -->
+<!-- NOTE: sample reviews for layout. Replace with real, verified patient reviews before launch. -->
+<section class="section container" id="reviews">
+  <div class="reviews">
+    <div class="reviews__intro reveal">
+      <p class="eyebrow">Patient reviews</p>
+      <h2>Trusted by <span class="u">local families</span></h2>
+      <div class="score">
+        <strong>4.9</strong>
+        <div><span class="stars">★★★★★</span><small>Based on 2,300+ reviews</small></div>
+      </div>
+      <div class="rev-ctrl">
+        <button type="button" class="round" id="prev" aria-label="Previous review"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg></button>
+        <button type="button" class="round" id="next" aria-label="Next review"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></button>
+        <span class="rev-count" id="revCount" aria-live="polite">1 / 5</span>
+      </div>
+    </div>
+    <div class="rev-stage reveal" id="revStage"></div>
+  </div>
+</section>
+
+<!-- ===== INSURANCE ===== -->
+<div class="insure">
+  <div class="container insure__inner">
+    <p>In-network with</p>
+    <ul><li>Aetna</li><li>Blue Cross</li><li>Cigna</li><li>UnitedHealthcare</li><li>Medicare</li><li>Medicaid</li><li>Humana</li></ul>
+  </div>
+</div>
+
+<!-- ===== FAQ ===== -->
+<section class="section container faq" id="faq">
+  <div class="faq__intro reveal">
+    <p class="eyebrow">FAQ</p>
+    <h2>Frequently asked <span class="u">questions</span></h2>
+    <p class="sub">Quick answers about appointments, insurance and prescriptions.</p>
+    <div class="faq__card" id="after-hours">
+      <h3>After-hours care</h3>
+      <p>When we're closed, call our main number and choose option 2 to reach the on-call doctor. For emergencies, always call 911.</p>
+      <a href="tel:+15552468100" class="btn btn--blue">Call (555) 246-8100</a>
+    </div>
+  </div>
+  <div class="faq__list reveal" id="faqList"></div>
+</section>
+
+<!-- ===== CONTACT ===== -->
+<section class="section section--tint" id="contact">
+  <div class="container contact">
+    <div class="contact__info reveal">
+      <p class="eyebrow">Contact us</p>
+      <h2>Visit the <span class="u">clinic</span></h2>
+      <ul class="info">
+        <li><span class="info__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 21s-7-6.2-7-12a7 7 0 0 1 14 0c0 5.8-7 12-7 12Z"/><circle cx="12" cy="9" r="2.5"/></svg></span><span><small>Address</small>210 Main Street, Suite 2, Columbus, OH 43215<em>Free parking · Step-free access</em></span></li>
+        <li><span class="info__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2Z"/></svg></span><span><small>Appointments</small><a href="tel:+15552468100">(555) 246-8100</a></span></li>
+        <li><span class="info__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></span><span><small>Email</small><a href="mailto:hello@carepointclinic.com">hello@carepointclinic.com</a></span></li>
+        <li><span class="info__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 7h8M8 11h8M8 15h5"/></svg></span><span><small>Fax (referrals)</small>(555) 246-8101</span></li>
+      </ul>
+      <div class="hours">
+        <h3>Opening hours <span class="open-now" id="openNow"></span></h3>
+        <dl id="hoursList">
+          <div data-day="1"><dt>Monday</dt><dd>8:00 am to 8:00 pm</dd></div>
+          <div data-day="2"><dt>Tuesday</dt><dd>8:00 am to 8:00 pm</dd></div>
+          <div data-day="3"><dt>Wednesday</dt><dd>8:00 am to 8:00 pm</dd></div>
+          <div data-day="4"><dt>Thursday</dt><dd>8:00 am to 8:00 pm</dd></div>
+          <div data-day="5"><dt>Friday</dt><dd>8:00 am to 8:00 pm</dd></div>
+          <div data-day="6"><dt>Saturday</dt><dd>9:00 am to 3:00 pm</dd></div>
+          <div data-day="0"><dt>Sunday</dt><dd>Closed (on-call doctor)</dd></div>
+        </dl>
+      </div>
+    </div>
+    <div class="contact__side reveal">
+      <div class="map" role="img" aria-label="Map placeholder">
+        <svg viewBox="0 0 400 240" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="400" height="240" fill="#E3EAF6"/><path d="M0 80H400M0 170H400M110 0V240M270 0V240M0 240L200 0" stroke="#F6F8FC" stroke-width="12" fill="none"/><path d="M330 0Q300 120 400 180" stroke="#D3E6DA" stroke-width="22" fill="none"/></svg>
+        <span class="map__pin"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M12 5h8v7h7v8h-7v7h-8v-7H5v-8h7Z" fill="currentColor"/></svg></span>
+        <span class="map__label">Replace with Google Maps embed</span>
+      </div>
+      <form class="form" id="contactForm" novalidate>
+        <h3 class="full">Send us a message</h3>
+        <p class="form__hint full">For non-urgent questions only. Please don't share detailed medical information here.</p>
+        <label>Name<input type="text" name="name" required autocomplete="name"><span class="err">Please enter your name</span></label>
+        <label>Phone<input type="tel" name="phone" autocomplete="tel"></label>
+        <label class="full">Email<input type="email" name="email" required autocomplete="email"><span class="err">Please enter a valid email</span></label>
+        <label class="full">Message<textarea name="message" rows="4" required></textarea><span class="err">Please add a short message</span></label>
+        <button type="submit" class="btn btn--navy btn--block full">Send Message</button>
+        <p class="form__ok full" hidden role="status">Thanks! Our front desk will reply within one business day.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CTA ===== -->
+<section class="container cta-wrap">
+  <div class="cta reveal">
+    <div class="cta__copy">
+      <h2>New to CarePoint?</h2>
+      <p>Register as a new patient today. Your first visit includes a full health review with your new family doctor.</p>
+    </div>
+    <div class="cta__btns">
+      <button type="button" class="btn btn--white btn--lg" data-book data-reason="New Patient Registration">Register as a New Patient</button>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <div class="container footer__grid">
+    <div class="footer__brand">
+      <a href="#top" class="logo logo--light"><span class="logo__mark" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M12 5h8v7h7v8h-7v7h-8v-7H5v-8h7Z" fill="currentColor"/></svg></span><span class="logo__text">CarePoint<small>Family Clinic</small></span></a>
+      <p>Trusted family doctors caring for our community since 2008.</p>
+      <div class="socials">
+        <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M14 8h3V4h-3a4 4 0 0 0-4 4v3H7v4h3v6h4v-6h3l1-4h-4V8Z"/></svg></a>
+        <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/></svg></a>
+        <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M8 10v7M8 7v.01M12 17v-4a2 2 0 0 1 4 0v4M12 10v7"/></svg></a>
+      </div>
+    </div>
+    <div><h3>Patients</h3><ul><li><a href="#" data-book>Book an appointment</a></li><li><a href="#" data-rx>Repeat prescriptions</a></li><li><a href="#" data-book data-reason="New Patient Registration">New patient registration</a></li><li><a href="#">Patient portal</a></li></ul></div>
+    <div><h3>Clinic</h3><ul><li><a href="#about">About</a></li><li><a href="#doctors">Our doctors</a></li><li><a href="#packages">Pricing</a></li><li><a href="#faq">FAQ</a></li></ul></div>
+    <div><h3>Visit</h3><ul><li>210 Main Street, Suite 2</li><li>Columbus, OH 43215</li><li><a href="tel:+15552468100">(555) 246-8100</a></li></ul></div>
+  </div>
+  <div class="container footer__bottom">
+    <p>© <span id="year">2026</span> CarePoint Family Clinic. All rights reserved.</p>
+    <p class="footer__legal"><a href="#">Privacy &amp; HIPAA Notice</a><a href="#">Terms</a><a href="#">Patient Rights</a></p>
+    <p class="footer__note">The information on this website is for general guidance and does not replace a consultation with a doctor. In an emergency, call 911.</p>
+  </div>
+</footer>
+
+<div class="sticky-bar" id="stickyBar">
+  <a href="tel:+15552468100" class="btn btn--line">Call</a>
+  <button type="button" class="btn btn--blue" data-book>Book Appointment</button>
+</div>
+<button type="button" class="to-top" id="toTop" aria-label="Back to top"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 15l6-6 6 6"/></svg></button>
+
+<!-- ===== PRESCRIPTION MODAL ===== -->
+<div class="modal" id="rxModal" hidden>
+  <div class="modal__overlay" data-close></div>
+  <div class="modal__box modal__box--sm" role="dialog" aria-modal="true" aria-labelledby="rxTitle">
+    <button type="button" class="modal__close" data-close aria-label="Close"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+    <div class="modal__pad">
+      <p class="eyebrow">Existing patients</p>
+      <h2 id="rxTitle">Repeat <span class="u">prescription</span></h2>
+      <p class="muted">Requests are usually ready within 2 working days. Controlled medicines may need a review appointment.</p>
+      <form class="form form--plain" id="rxForm" novalidate>
+        <label>Full name<input type="text" name="name" required autocomplete="name"><span class="err">Required</span></label>
+        <label>Date of birth<input type="date" name="dob" required><span class="err">Required</span></label>
+        <label class="full">Medication(s) needed<textarea name="meds" rows="3" required placeholder="Name, strength and dose, e.g. Metformin 500mg twice daily"></textarea><span class="err">Please list your medication</span></label>
+        <label class="full">Pharmacy<select name="pharmacy" required><option value="">Choose pharmacy</option><option>Collect from clinic</option><option>CVS Main Street</option><option>Walgreens Downtown</option><option>Other (add in notes)</option></select><span class="err">Please choose a pharmacy</span></label>
+        <label class="full">Phone<input type="tel" name="phone" required autocomplete="tel"><span class="err">Required</span></label>
+        <button type="submit" class="btn btn--blue btn--block full">Submit Request</button>
+        <p class="form__ok full" hidden role="status">Request received. We'll text you when your prescription is ready.</p>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- ===== BOOKING MODAL ===== -->
+<div class="modal" id="bookModal" hidden>
+  <div class="modal__overlay" data-close></div>
+  <div class="modal__box" role="dialog" aria-modal="true" aria-labelledby="bookTitle">
+    <button type="button" class="modal__close" data-close aria-label="Close booking"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+    <div class="modal__head">
+      <p class="eyebrow">Book an appointment</p>
+      <h2 id="bookTitle">See a <span class="u">doctor</span></h2>
+      <ol class="steps" id="stepper" aria-label="Booking progress">
+        <li class="active"><span>1</span><em>Visit</em></li><li><span>2</span><em>Doctor &amp; time</em></li><li><span>3</span><em>Details</em></li><li><span>4</span><em>Done</em></li>
+      </ol>
+    </div>
+    <form id="bookForm" novalidate>
+      <fieldset class="pane active" data-step="1">
+        <legend class="label">Reason for visit</legend>
+        <div class="choose" id="reasonGrid"></div>
+        <p class="label label--mt">Appointment type</p>
+        <div class="seg" id="modeSeg">
+          <label><input type="radio" name="mode" value="In clinic" checked><span>In clinic</span></label>
+          <label><input type="radio" name="mode" value="Video call"><span>Video call</span></label>
+          <label><input type="radio" name="mode" value="Home visit"><span>Home visit</span></label>
+        </div>
+        <p class="step-err" id="err1" hidden>Please choose a reason for your visit.</p>
+      </fieldset>
+
+      <fieldset class="pane" data-step="2">
+        <legend class="label">Choose your doctor</legend>
+        <div class="dpick" id="docPick"></div>
+        <p class="label label--mt">Date</p>
+        <div class="dates" id="dates"></div>
+        <p class="label">Available times</p>
+        <div class="times" id="times"></div>
+        <p class="step-err" id="err2" hidden>Please choose a date and time.</p>
+      </fieldset>
+
+      <fieldset class="pane form form--plain" data-step="3">
+        <legend class="sr">Patient details</legend>
+        <div class="full seg seg--2">
+          <label><input type="radio" name="who" value="Myself" checked><span>For myself</span></label>
+          <label><input type="radio" name="who" value="Family member"><span>For a family member</span></label>
+        </div>
+        <label>Patient full name<input type="text" name="name" required autocomplete="name"><span class="err">Required</span></label>
+        <label>Date of birth<input type="date" name="dob" required><span class="err">Required</span></label>
+        <label>Phone<input type="tel" name="phone" required autocomplete="tel"><span class="err">Required</span></label>
+        <label>Email<input type="email" name="email" required autocomplete="email"><span class="err">Valid email required</span></label>
+        <label class="full">Payment<select name="payment"><option>Insurance</option><option>Self-pay</option><option>Medicare / Medicaid</option></select></label>
+        <label class="full">Briefly describe your symptoms (optional)<textarea name="notes" rows="3" placeholder="e.g. sore throat and fever for 3 days"></textarea></label>
+        <label class="check full"><input type="checkbox" name="consent" required> I confirm this is not an emergency and agree to the cancellation policy.<span class="err">Please confirm to continue</span></label>
+      </fieldset>
+
+      <div class="pane done" data-step="4">
+        <span class="done__ic"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg></span>
+        <h3>You're booked in!</h3>
+        <dl class="summary" id="summary"></dl>
+        <p class="muted" id="doneNote"></p>
+      </div>
+
+      <div class="modal__foot">
+        <button type="button" class="btn btn--line" id="backBtn" hidden>Back</button>
+        <p class="modal__sel" id="selText"></p>
+        <button type="button" class="btn btn--navy" id="nextBtn">Continue</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script src="script.js"></script>
+</body>
+</html>

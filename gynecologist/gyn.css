@@ -1,0 +1,357 @@
+/* =========================================================
+   BloomCare Women's Health — page-specific styles
+   (base system lives in style.css)
+   ========================================================= */
+
+/* Photos (Unsplash). Each image sits over an illustrated fallback and removes itself if it fails. */
+.photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1}
+
+/* Hero */
+.chero{position:relative;overflow:hidden}
+.chero__ecg{position:absolute;left:0;right:0;top:46%;width:100%;height:160px;opacity:.12;pointer-events:none}
+.chero__ecg path{stroke-dasharray:2400;stroke-dashoffset:2400;animation:ecgLine 6s linear infinite}
+@keyframes ecgLine{to{stroke-dashoffset:0}}
+.chero .hero__grid{position:relative}
+.chero__ticks{list-style:none;margin:26px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:10px 22px;font-size:14.5px;font-weight:600;color:var(--navy)}
+.chero__ticks li{display:flex;align-items:center;gap:8px}
+.chero__ticks li::before{content:"";width:20px;height:20px;border-radius:7px;background:var(--sky) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23B4235A' stroke-width='3.2'%3E%3Cpath d='M5 12l5 5 9-10'/%3E%3C/svg%3E") center/12px no-repeat}
+.chero__frame{position:relative;width:min(400px,82%);aspect-ratio:300/380;border-radius:200px 200px 32px 32px;overflow:hidden;box-shadow:var(--shadow);border:8px solid var(--white)}
+.chero__frame .photo{transition:transform 1.4s var(--ease)}
+.chero__art:hover .chero__frame .photo{transform:scale(1.05)}
+.chero__fallback{position:absolute;inset:0;width:100%;height:100%}
+.beat{transform-origin:150px 200px;animation:beat 1.2s ease-in-out infinite}
+@keyframes beat{0%,100%{transform:scale(1)}14%{transform:scale(1.08)}28%{transform:scale(1)}42%{transform:scale(1.05)}}
+.chero__art .fcard{z-index:3}
+.chero__art .fcard--b{bottom:150px}
+
+/* About */
+.cabout__media{position:relative}
+.cabout__photo{position:relative;aspect-ratio:400/460;border-radius:var(--r-xl);overflow:hidden;box-shadow:var(--shadow)}
+.cabout__photo svg{position:absolute;inset:0;width:100%;height:100%}
+.cabout__photo .photo{transition:transform 1.2s var(--ease)}
+.cabout__media:hover .cabout__photo .photo{transform:scale(1.05)}
+.cabout__badge{position:absolute;right:-18px;bottom:36px;z-index:2;width:220px;padding:20px 22px;border-radius:var(--r-lg);background:var(--navy);color:#E0C8D4;box-shadow:var(--shadow)}
+.cabout__badge strong{display:block;font-family:var(--head);font-size:42px;line-height:1;color:#F9A8C9}
+.cabout__badge span{font-size:13.5px}
+
+/* Service cards: slower, smoother hover */
+.scard{transition:transform .8s var(--ease),box-shadow .8s,border-color .6s}
+.scard__ic{transition:background .7s,color .7s,transform .8s var(--ease)}
+.scard__desc,.scard__price{transition:opacity .45s,transform .6s var(--ease)}
+.scard__more{transition:opacity .3s,transform .4s var(--ease)}
+.scard:hover .scard__more,.scard:focus-within .scard__more{transition:opacity .6s .3s,transform .7s .3s var(--ease)}
+.scard:hover .scard__desc,.scard:focus-within .scard__desc{transform:translateY(-8px)}
+
+/* Heart tests */
+.sub--light{color:#CFB3C3}
+.tests{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.test{position:relative;min-height:380px;border-radius:var(--r-lg);overflow:hidden;background:var(--navy-2);isolation:isolate;display:flex;flex-direction:column;justify-content:flex-end;padding:24px;color:#fff;transition:transform .8s var(--ease),box-shadow .8s}
+.test:hover,.test:focus-within{transform:translateY(-8px);box-shadow:0 30px 60px -28px rgba(0,0,0,.6)}
+.test__art{position:absolute;inset:0;z-index:0;display:flex;align-items:center;justify-content:center;background:var(--navy-2)}
+.test__art svg{width:40%;color:#F9A8C9;opacity:.6}
+.test .photo{z-index:0;transition:transform 1.2s var(--ease)}
+.test:hover .photo{transform:scale(1.08)}
+.test::after{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(58,16,49,.05) 20%,rgba(58,16,49,.92) 78%);transition:background .8s}
+.test:hover::after,.test:focus-within::after{background:linear-gradient(180deg,rgba(58,16,49,.45) 0%,rgba(58,16,49,.96) 60%)}
+.test > *:not(.test__art):not(.photo){position:relative;z-index:2}
+.test__tag{position:absolute!important;top:20px;left:20px;padding:5px 11px;border-radius:999px;background:rgba(255,255,255,.92);color:var(--navy);font-size:12px;font-weight:700}
+.test h3{color:#fff;font-size:24px}
+.test__short{margin-top:4px;font-size:14.5px;color:#ECD8E2}
+.test__more{display:grid;grid-template-rows:0fr;transition:grid-template-rows .7s var(--ease)}
+.test__more > div{overflow:hidden}
+.test:hover .test__more,.test:focus-within .test__more{grid-template-rows:1fr}
+.test__more p{margin-top:12px;font-size:14px;color:#ECD8E2}
+.test__row{display:flex;justify-content:space-between;align-items:baseline;gap:10px;margin:14px 0;padding-top:12px;border-top:1px solid rgba(255,255,255,.18);font-size:13px;color:#DFC6D3}
+.test__row strong{font-family:var(--head);font-size:26px;color:#fff}
+
+/* Heart check */
+.opts--4{grid-template-columns:repeat(4,minmax(0,1fr))}
+.risks{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.risk{position:relative;cursor:pointer}
+.risk input{position:absolute;opacity:0;pointer-events:none}
+.risk span{display:flex;align-items:center;gap:10px;min-height:48px;padding:10px 14px;border-radius:var(--r-sm);border:1.5px solid var(--line);background:var(--bg);font-size:14px;font-weight:600;color:var(--navy);transition:border-color .3s,background .3s,color .3s}
+.risk span::before{content:"";flex:none;width:20px;height:20px;border-radius:6px;border:1.5px solid #DCC3CF;background:var(--white) center/12px no-repeat;transition:background-color .3s,border-color .3s}
+.risk:hover span{border-color:var(--blue)}
+.risk input:checked + span{border-color:var(--blue);background:var(--tint)}
+.risk input:checked + span::before{background-color:var(--blue);border-color:var(--blue);background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23fff' stroke-width='3.4'%3E%3Cpath d='M5 12l5 5 9-10'/%3E%3C/svg%3E")}
+.risk input:focus-visible + span{outline:3px solid var(--amber);outline-offset:2px}
+.meter{margin-top:24px;padding:22px;border-radius:var(--r-lg);background:var(--tint);display:grid;grid-template-columns:200px 1fr;gap:22px;align-items:center}
+.meter__gauge{position:relative;width:200px;height:110px}
+.meter__gauge svg{width:100%;height:100%}
+#meterArc{transition:stroke-dasharray 1s var(--ease),stroke .6s}
+.meter__needle{position:absolute;left:50%;bottom:10px;width:4px;height:76px;margin-left:-2px;border-radius:4px;background:var(--navy);transform-origin:50% 100%;transform:rotate(-90deg);transition:transform 1s cubic-bezier(.34,1.4,.5,1)}
+.meter__needle::after{content:"";position:absolute;left:50%;bottom:-8px;width:16px;height:16px;margin-left:-8px;border-radius:50%;background:var(--navy)}
+.meter__text h3{font-size:21px;margin-bottom:6px}
+.meter__text p{font-size:14.5px;color:var(--muted);margin-bottom:14px}
+
+/* Booking extras */
+.symptoms{display:flex;flex-wrap:wrap;gap:8px}
+.sym{position:relative;cursor:pointer}
+.sym input{position:absolute;opacity:0;pointer-events:none}
+.sym span{display:inline-flex;align-items:center;min-height:40px;padding:0 14px;border-radius:999px;border:1.5px solid var(--line);background:var(--white);font-size:13.5px;font-weight:600;color:var(--navy);transition:background .25s,color .25s,border-color .25s}
+.sym input:checked + span{background:var(--navy);border-color:var(--navy);color:#fff}
+.sym input:focus-visible + span{outline:3px solid var(--amber);outline-offset:2px}
+.upload{position:relative}
+.upload input[type=file]{position:absolute;inset:auto 0 0 0;height:64px;opacity:0;cursor:pointer;min-height:0!important}
+.upload__box{display:flex;align-items:center;gap:12px;min-height:64px;padding:0 18px;border:1.5px dashed #E6C3D3;border-radius:var(--r-sm);background:var(--white);font-weight:500;color:var(--muted);transition:border-color .25s,background .25s}
+.upload:hover .upload__box{border-color:var(--blue);background:var(--tint)}
+.upload__box svg{flex:none;color:var(--blue)}
+.upload input:focus-visible + .upload__box{outline:3px solid var(--amber);outline-offset:2px}
+
+/* CTA with photo */
+.ccta{background:var(--navy)}
+.ccta .ccta__bg{position:absolute;z-index:0;opacity:.28}
+.ccta::before{z-index:0}
+.ccta > *:not(.ccta__bg){position:relative;z-index:1}
+
+/* Doctor photos */
+.doc__photo .photo{object-position:center 22%;transition:transform .8s var(--ease)}
+.doc:hover .doc__photo .photo{transform:scale(1.06)}
+.doc__badge{z-index:2}
+
+/* Responsive */
+@media (max-width:1080px){
+  .tests{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media (max-width:900px){
+  .cabout__badge{right:12px}
+}
+@media (max-width:640px){
+  .tests{grid-template-columns:1fr}
+  .test{min-height:320px}
+  .opts--4{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .risks{grid-template-columns:1fr}
+  .meter{grid-template-columns:1fr;justify-items:center;text-align:center}
+  .meter .result__btns{justify-content:center}
+  .chero__frame{width:min(280px,74%)}
+  .chero__art .fcard--b{bottom:100px}
+  .cabout__badge{position:static;width:auto;margin-top:14px}
+}
+@media (hover:none){
+  .test__more{grid-template-rows:1fr}
+  .test::after{background:linear-gradient(180deg,rgba(58,16,49,.35) 0%,rgba(58,16,49,.95) 60%)}
+}
+@media (prefers-reduced-motion:reduce){
+  .chero__ecg path{stroke-dashoffset:0}
+}
+
+/* ===== Service cards: details always visible, hover only changes colour (slowly) ===== */
+.scard{min-height:0;transition:transform 1s var(--ease),box-shadow 1s ease,border-color 1s ease}
+.scard__ic{transition:background 1s ease,color 1s ease,transform 1s var(--ease)}
+.scard__price{display:none}
+.scard__more{position:static;opacity:1;transform:none;margin-top:14px;transition:none}
+.scard:hover .scard__more,.scard:focus-within .scard__more{transition:none}
+.scard:hover .scard__desc,.scard:focus-within .scard__desc{opacity:1;transform:none}
+.scard:hover,.scard:focus-within{transform:translateY(-6px)}
+
+/* ===== Heart test cards: details always visible, hover only darkens/zooms slowly ===== */
+.test{min-height:420px;transition:transform 1s var(--ease),box-shadow 1s ease}
+.test__more{grid-template-rows:1fr;transition:none}
+.test::after{background:linear-gradient(180deg,rgba(58,16,49,.25) 0%,rgba(58,16,49,.94) 58%);transition:opacity 1.2s ease,background 1.2s ease}
+.test:hover::after,.test:focus-within::after{background:linear-gradient(180deg,rgba(58,16,49,.5) 0%,rgba(58,16,49,.97) 50%)}
+.test .photo{transition:transform 1.6s var(--ease)}
+.test:hover,.test:focus-within{transform:translateY(-6px)}
+.test .btn--white{transition:background 1s ease,color 1s ease,transform .6s var(--ease)}
+.test:hover .btn--white{background:var(--blue);color:#fff}
+@media (max-width:640px){.test{min-height:380px}}
+
+/* ===== Surgery page extras ===== */
+.sframe{border-radius:32px;aspect-ratio:300/380}
+.glowlamp{transform-origin:150px 120px;animation:lamp 4s ease-in-out infinite}
+@keyframes lamp{0%,100%{opacity:.5;transform:scale(1)}50%{opacity:.9;transform:scale(1.1)}}
+
+/* Procedure facts row inside service cards */
+.pfacts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-top:4px}
+.pfacts span{padding:8px 10px;border-radius:10px;background:var(--tint);font-size:12px;color:var(--muted);transition:background 1s ease}
+.pfacts strong{display:block;font-size:13.5px;color:var(--navy)}
+.scard:hover .pfacts span,.scard:focus-within .pfacts span{background:var(--sky)}
+.scard__tag{display:inline-block;align-self:flex-start;margin-top:10px;padding:4px 10px;border-radius:999px;background:var(--sky);color:var(--blue-dark);font-size:11.5px;font-weight:700}
+
+/* Recovery planner output */
+.plan-out{margin-top:24px;padding:24px;border-radius:var(--r-lg);background:var(--tint);animation:cardIn .5s var(--ease)}
+.plan-out h3{font-size:22px;margin-bottom:4px}
+.plan-out > p{font-size:14.5px;color:var(--muted);margin-bottom:18px}
+.miles{list-style:none;margin:0 0 18px;padding:0;display:flex;flex-direction:column;gap:12px}
+.mile{display:grid;grid-template-columns:150px 1fr 82px;align-items:center;gap:12px;font-size:14px;font-weight:600;color:var(--navy)}
+.mile i{position:relative;height:12px;border-radius:99px;background:var(--white);overflow:hidden}
+.mile i::after{content:"";position:absolute;inset:0;width:var(--w);border-radius:99px;background:var(--blue);transform-origin:left;animation:grow 1.2s var(--ease) both}
+.mile:nth-child(2) i::after{animation-delay:.12s}.mile:nth-child(3) i::after{animation-delay:.24s}.mile:nth-child(4) i::after{animation-delay:.36s}.mile:nth-child(5) i::after{animation-delay:.48s}
+@keyframes grow{from{transform:scaleX(0)}}
+.mile em{font-style:normal;text-align:right;color:var(--muted);font-weight:500}
+.plan-meta{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px}
+.plan-meta span{padding:6px 12px;border-radius:999px;background:var(--white);font-size:12.5px;font-weight:600;color:var(--navy)}
+
+/* Journey timeline */
+.journey{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:16px;position:relative}
+.journey::before{content:"";position:absolute;left:8%;right:8%;top:28px;height:2px;background:repeating-linear-gradient(90deg,var(--blue) 0 10px,transparent 10px 18px);opacity:.4}
+.journey li{position:relative;padding:22px 20px;border-radius:var(--r-lg);background:var(--white);text-align:center;transition:transform 1s var(--ease),box-shadow 1s ease}
+.journey li:hover{transform:translateY(-6px);box-shadow:var(--shadow)}
+.journey__n{position:relative;z-index:1;display:flex;align-items:center;justify-content:center;width:56px;height:56px;margin:-50px auto 16px;border-radius:50%;background:var(--blue);color:#fff;font-family:var(--head);font-size:24px;font-weight:700;border:6px solid var(--tint);transition:background 1s ease}
+.journey li:hover .journey__n{background:var(--navy)}
+.journey h3{font-size:18px;margin-bottom:6px}
+.journey p{font-size:14px;color:var(--muted)}
+.journey small{display:inline-block;margin-top:12px;padding:4px 10px;border-radius:999px;background:var(--tint);font-size:12px;font-weight:700;color:var(--blue-dark)}
+#journey .container{padding-top:20px}
+
+@media (max-width:1080px){
+  .journey{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:50px}
+  .journey::before{display:none}
+}
+@media (max-width:640px){
+  .journey{grid-template-columns:1fr}
+  .mile{grid-template-columns:110px 1fr 70px;font-size:13px}
+}
+
+/* ===== 3 doctor cards per row, nav links never wrap ===== */
+.docs{grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+.doc__photo{aspect-ratio:1/.9}
+.doc__photo svg{position:absolute;inset:0;width:100%;height:100%}
+.menu > a,.btn{white-space:nowrap}
+@media (max-width:1080px){.docs{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:640px){.docs{grid-template-columns:1fr}}
+
+/* ===== Joint map (where does it hurt) ===== */
+.bodymap{display:grid;grid-template-columns:.8fr 1.2fr;gap:56px;align-items:center;padding:44px;border-radius:var(--r-xl);background:var(--white);border:1px solid var(--line)}
+.body{position:relative;width:100%;max-width:260px;margin:0 auto;aspect-ratio:200/440}
+.body__svg{width:100%;height:100%}
+.spot{position:absolute;width:44px;height:44px;margin:-22px 0 0 -22px;border:0;border-radius:50%;background:transparent;cursor:pointer;display:flex;align-items:center;justify-content:center}
+.spot span{position:relative;width:18px;height:18px;border-radius:50%;background:var(--blue);border:3px solid #fff;box-shadow:0 0 0 2px var(--blue);transition:transform .6s var(--ease),background .8s,box-shadow .8s}
+.spot span::after{content:"";position:absolute;inset:-8px;border-radius:50%;border:2px solid var(--blue);opacity:0;animation:ping 2.2s ease-out infinite}
+.spot:hover span{transform:scale(1.25)}
+.spot.active span{background:var(--amber);box-shadow:0 0 0 2px var(--amber);transform:scale(1.35)}
+.spot.active span::after{border-color:var(--amber)}
+.area__chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px}
+.area__chips button{min-height:40px;padding:0 14px;border-radius:999px;border:1.5px solid var(--line);background:var(--bg);color:var(--navy);font-weight:600;font-size:13.5px;cursor:pointer;transition:background .8s,color .8s,border-color .8s}
+.area__chips button:hover{border-color:var(--blue)}
+.area__chips button[aria-selected="true"]{background:var(--blue);border-color:var(--blue);color:#fff}
+.area__card{padding:28px;border-radius:var(--r-lg);background:var(--tint);animation:cardIn .6s var(--ease)}
+.area__card h3{font-size:26px}
+.area__card > p{margin:8px 0 18px;color:var(--muted)}
+.area__list{list-style:none;margin:0 0 22px;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.area__list li{display:flex;align-items:center;gap:10px;padding:12px 14px;border-radius:12px;background:#fff;font-size:14.5px;font-weight:600;color:var(--navy)}
+.area__list li::before{content:"";flex:none;width:8px;height:8px;border-radius:50%;background:var(--amber)}
+@media (max-width:900px){.bodymap{grid-template-columns:1fr;gap:36px;padding:28px}.body{max-width:200px}}
+@media (max-width:640px){.bodymap{padding:20px}.area__list{grid-template-columns:1fr}.area__card{padding:22px}}
+
+/* ===== Gynecology extras ===== */
+.stage-photo{position:relative;width:100%;aspect-ratio:4/5;border-radius:var(--r-xl);overflow:hidden;background:var(--sky)}
+.stage-photo svg{position:absolute;inset:0;width:100%;height:100%}
+.stage-photo .photo{transition:transform 1.4s var(--ease)}
+.bodymap:hover .stage-photo .photo{transform:scale(1.04)}
+.duedate{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.duedate label{display:flex;flex-direction:column;gap:6px;font-size:13px;font-weight:600;color:var(--navy)}
+.duedate input,.duedate select{min-height:50px;padding:0 14px;border:1.5px solid #E6C3D3;border-radius:var(--r-sm);background:var(--bg);font:500 15px var(--body);color:var(--text)}
+.duedate input:focus,.duedate select:focus{outline:none;border-color:var(--blue);box-shadow:0 0 0 4px rgba(180,35,90,.15)}
+.due-out{margin-top:22px;padding:24px;border-radius:var(--r-lg);background:var(--tint);animation:cardIn .5s var(--ease)}
+.due-big{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 14px;margin-bottom:14px}
+.due-big strong{font-family:var(--head);font-size:34px;color:var(--navy);line-height:1.1}
+.due-big span{font-size:14px;color:var(--muted)}
+.due-bar{position:relative;height:14px;border-radius:99px;background:#fff;overflow:hidden;margin:8px 0 6px}
+.due-bar i{position:absolute;inset:0;width:var(--w);border-radius:99px;background:var(--blue);transform-origin:left;animation:grow 1.2s var(--ease) both}
+.due-tri{display:grid;grid-template-columns:repeat(3,1fr);font-size:12px;font-weight:700;color:var(--muted);margin-bottom:16px}
+.due-tri span:nth-child(2){text-align:center}.due-tri span:nth-child(3){text-align:right}
+.due-stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-bottom:18px}
+.due-stats div{padding:12px;border-radius:12px;background:#fff;text-align:center}
+.due-stats strong{display:block;font-family:var(--head);font-size:22px;color:var(--navy)}
+.due-stats small{font-size:12px;color:var(--muted)}
+.due-next{font-size:14px;color:var(--navy);margin-bottom:16px;padding:12px 14px;border-radius:12px;background:#fff}
+@media (max-width:640px){.duedate{grid-template-columns:1fr}.due-stats{grid-template-columns:1fr 1fr 1fr;gap:6px}.due-big strong{font-size:26px}}
+
+/* =====================================================
+   THEME: Gynecology — soft editorial
+   ===================================================== */
+:root{--head:'Fraunces',Georgia,serif;--body:'Nunito Sans',system-ui,sans-serif;--r-xl:40px;--r-lg:30px;--r-md:22px;--r-sm:16px}
+h1,h2,h3{font-weight:500;letter-spacing:-.015em}
+h1{font-size:clamp(46px,6vw,80px)!important}
+.u{background:none;padding:0;font-style:italic;color:var(--blue)}
+.u--light{color:#F9A8C9}
+.eyebrow{text-transform:none;letter-spacing:.02em;font-size:15px;font-weight:700;font-family:var(--body)}
+.eyebrow::before{width:22px;height:22px;border-radius:50%;background:var(--sky)}
+.btn{border-radius:999px}
+.status,.chip{border-radius:999px;background:var(--sky);border:0}
+/* hero: arch photo frame, softer background */
+.chero{background:linear-gradient(180deg,var(--tint),var(--bg) 70%)}
+.chero__frame{border-radius:240px 240px 40px 40px!important;border-color:#fff;border-width:10px}
+.chero .hero__bg{background:var(--sky);border-radius:50%;inset:40px}
+.fcard{border-radius:999px;padding:10px 18px 10px 10px}
+.fcard--c{border-radius:24px;padding:14px 18px}
+.fcard__ic{border-radius:50%}
+/* borderless soft cards */
+.scard{background:var(--tint);border:0;border-radius:30px}
+.scard:hover{background:#fff;box-shadow:var(--shadow)}
+.scard__ic,.trust__ic,.info__ic,.how__ic,.logo__mark{border-radius:50%}
+.pfacts span{background:#fff;border-radius:16px}
+.trust li{border-radius:999px;border:0;background:var(--tint)}
+.doc{border-radius:30px}
+.doc__photo{border-radius:30px 30px 0 0}
+.test{border-radius:30px}
+.journey li{border-radius:30px}
+.plan{border-radius:30px}
+.qa{border-radius:22px}
+.cabout__photo{border-radius:200px 200px 30px 30px}
+.stage-photo{border-radius:200px 200px 40px 40px}
+.section--navy{background:var(--navy)}
+.scard{background:#fff;box-shadow:0 14px 34px -26px rgba(58,16,49,.35)}
+.scard:hover{background:#fff;box-shadow:0 24px 50px -28px rgba(58,16,49,.45)}
+.scard__ic{background:var(--sky)}
+.pfacts span{background:var(--tint)}
+
+/* =====================================================
+   LAYOUT: Gynecology — centered arch hero, masonry care, round doctors
+   ===================================================== */
+.chero .hero__grid{grid-template-columns:1fr;justify-items:center;text-align:center;gap:30px}
+.chero .hero__copy{display:flex;flex-direction:column;align-items:center;max-width:820px}
+.chero .lead{margin-inline:auto;max-width:600px}
+.chero .hero__btns,.chero__ticks{justify-content:center}
+.chero__art{height:560px;width:100%;max-width:760px}
+.chero__frame{width:min(380px,80%)!important}
+.chero__art .fcard--a{left:4%;top:24%}
+.chero__art .fcard--b{right:4%;top:46%;bottom:auto}
+.chero__art .fcard--c{left:10%;bottom:12%}
+/* services: 3 roomy columns */
+.sgrid{grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+.scard{padding:30px 28px}
+/* care cards: masonry */
+.tests{display:block;columns:3;column-gap:20px}
+.test{break-inside:avoid;margin-bottom:20px;min-height:360px!important}
+.test:nth-child(3n+1){min-height:480px!important}
+.test:nth-child(3n+2){min-height:400px!important}
+/* doctors: round profile cards */
+.doc{text-align:center;padding-top:30px;background:var(--tint)}
+.doc__photo{width:190px;height:190px;aspect-ratio:1!important;margin:0 auto;border-radius:50%!important;border:6px solid #fff;box-shadow:0 12px 30px -16px rgba(58,16,49,.4)}
+.doc__badge{left:50%;top:auto;bottom:6px;transform:translateX(-50%);white-space:nowrap}
+.doc__meta{align-items:center}
+.doc__meta span{justify-content:center}
+/* FAQ: intro on top, list centered */
+.faq{grid-template-columns:1fr;max-width:900px}
+.faq__intro{position:static;text-align:center;display:flex;flex-direction:column;align-items:center}
+.faq__card{display:none}
+/* contact info in a plum card */
+.contact__info{background:var(--navy);color:#ECD8E2;padding:40px;border-radius:30px}
+.contact__info h2,.contact__info .info li>span:last-child{color:#fff}
+.contact__info .eyebrow{color:#F9A8C9}
+.contact__info .info small,.contact__info .info em{color:#DFC6D3}
+.contact__info .info li:hover{background:rgba(255,255,255,.06)}
+.contact__info .hours{background:rgba(255,255,255,.06)}
+.contact__info .hours h3,.contact__info .hours dd{color:#fff}
+.contact__info .hours dt{color:#DFC6D3}
+.contact__info .hours dl div.today{background:rgba(255,255,255,.08)}
+.contact__info a{color:#fff}
+@media (max-width:1080px){.sgrid{grid-template-columns:repeat(2,minmax(0,1fr))}.tests{columns:2}}
+@media (max-width:640px){.sgrid{grid-template-columns:1fr}.tests{columns:1}.chero__art{height:440px}.contact__info{padding:26px}}
+
+/* ===== Hero art: ultrasound in the arch ===== */
+.usound{background:#2A0B23!important;position:relative}
+.us__img{position:absolute;inset:0;width:100%;height:100%}
+.us__label{position:absolute;z-index:2;top:16%;left:0;right:0;display:flex;flex-direction:column;align-items:center;gap:2px;color:#F9D2E2}
+.us__label span{font-size:11px;letter-spacing:.14em;text-transform:uppercase;opacity:.8}
+.us__label strong{font-family:var(--head);font-size:22px;font-weight:500;color:#fff}
+.us__baby{transform-origin:150px 220px;animation:float 5s ease-in-out infinite}
+@keyframes float{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(-6px) rotate(-2deg)}}
+.us__wave{stroke-dasharray:600;stroke-dashoffset:600;animation:monDraw2 4s linear infinite}
+@keyframes monDraw2{to{stroke-dashoffset:0}}
+.chero{padding-top:30px}
+.chero h1{font-size:clamp(42px,5vw,64px)!important;margin:14px 0}
+.chero .hero__grid{gap:10px}
+.chero__art{height:470px}
+.chero__frame{width:min(330px,78%)!important}

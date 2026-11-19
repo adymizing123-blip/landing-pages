@@ -355,3 +355,7 @@ h1{font-size:clamp(46px,6vw,80px)!important}
 .chero .hero__grid{gap:10px}
 .chero__art{height:470px}
 .chero__frame{width:min(330px,78%)!important}
+
+@media (min-width:901px){.faq{grid-template-columns:.85fr 1.15fr;max-width:1240px}.faq__intro{position:sticky;top:110px;text-align:left;align-items:stretch}}
+.faq__img{border-radius:30px}
+@media (max-width:640px){.chero__art{height:380px!important}.chero__frame{width:min(250px,68%)!important}}

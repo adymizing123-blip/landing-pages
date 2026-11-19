@@ -287,3 +287,8 @@ h1,h2,h3{letter-spacing:-.035em}
 .chero h1{font-size:clamp(40px,5vw,66px);margin:16px 0}
 .chero .hero__grid{gap:30px}
 .chero__art .fcard--c{left:auto;right:20px;bottom:-22px}
+
+@media (min-width:901px){.faq{grid-template-columns:.85fr 1.15fr;max-width:none}.faq__intro{position:sticky;top:110px;text-align:left;align-items:stretch}.faq__card{flex-direction:column;align-items:flex-start}}
+.faq__img{border-radius:14px}
+@media (max-width:640px){.chero__art{height:auto!important}.monitor{min-height:0}.mon__ecg{min-height:110px}.mon__bars{height:44px}}
+@media (max-width:640px){.chero__art .fcard--c{display:none!important}}

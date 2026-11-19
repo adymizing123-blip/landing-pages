@@ -319,3 +319,7 @@ h2{font-size:clamp(32px,4vw,50px)}
 .splan{width:min(440px,92%)!important;aspect-ratio:auto!important}
 .sp__steps span{text-align:left}
 .chero__art .fcard--b{bottom:-18px;right:-6px}
+
+@media (min-width:901px){.faq{grid-template-columns:.85fr 1.15fr}.faq__intro{display:block;position:sticky;top:110px}.faq__list{grid-template-columns:1fr}}
+.faq__img{border-radius:6px}
+@media (max-width:900px){.chero .hero__art{order:-1!important;height:auto!important;padding:10px 0 30px}.splan{width:100%!important}}

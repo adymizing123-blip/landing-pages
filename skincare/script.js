@@ -177,3 +177,10 @@ contactForm.addEventListener('submit', (e) => {
 });
 
 document.getElementById('year').textContent = new Date().getFullYear();
+
+/* ================= ACTIVE NAV LINK ON SCROLL ================= */
+const navLinks = [...document.querySelectorAll('.nav__menu > a')];
+const spy = new IntersectionObserver((entries) => {
+  entries.forEach(en => { if (en.isIntersecting) navLinks.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + en.target.id)); });
+}, { rootMargin: '-45% 0px -50% 0px' });
+navLinks.forEach(a => { const sec = document.querySelector(a.getAttribute('href')); if (sec) spy.observe(sec); });

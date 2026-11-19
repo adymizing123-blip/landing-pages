@@ -619,3 +619,56 @@ h2{font-family:var(--serif);font-size:clamp(40px,5vw,66px);line-height:1.02;lett
 /* ===== Prevent sideways scroll on mobile (off-screen menu, sliders, marquees) ===== */
 html{overflow-x:hidden}
 @supports (overflow:clip){html,body{overflow-x:clip}}
+
+
+/* ===== Mobile fixes: working menu, side padding, compact filters ===== */
+@media (max-width:1080px){.nav{-webkit-backdrop-filter:none!important;backdrop-filter:none!important;background:var(--ivory)!important}}
+.section.container{padding-left:28px;padding-right:28px}
+@media (max-width:640px){
+  .section.container{padding-left:20px;padding-right:20px}
+  .tabs{flex-wrap:wrap!important;overflow:visible!important;margin-inline:0!important;padding:0!important;gap:8px!important}
+  .tabs button{min-height:38px!important;padding:0 14px!important;font-size:13px!important;flex:0 0 auto!important;border-radius:999px}
+  .to-top{width:42px!important;height:42px!important;right:14px!important;bottom:92px!important}
+}
+.faq__img{position:relative;aspect-ratio:4/3;border-radius:22px;overflow:hidden;margin:6px 0 24px;box-shadow:0 24px 50px -30px rgba(0,0,0,.35)}
+.faq__img img{width:100%;height:100%;object-fit:cover;display:block}
+
+/* nav links never wrap */
+.menu > a,.nav__menu a{white-space:nowrap}
+
+
+/* ===== Shared nav + footer interactions ===== */
+@media (min-width:1081px){
+  .menu > a,.nav__menu > a{position:relative}
+  .menu > a::after,.nav__menu > a::after{content:"";position:absolute;left:0;right:0;bottom:-6px;top:auto;width:auto;height:2px;margin:0;border-radius:2px;background:var(--mauve);transform:scaleX(0);transform-origin:left center;transition:transform .4s cubic-bezier(.2,.7,.2,1)}
+  .menu > a:hover::after,.menu > a.active::after,.nav__menu > a:hover::after,.nav__menu > a.active::after{transform:scaleX(1);width:auto}
+}
+.footer ul a,.footer nav a{display:inline-flex;align-items:center;transition:transform .45s cubic-bezier(.2,.7,.2,1),color .3s}
+.footer ul a::before,.footer nav a::before{content:"";flex:none;width:0;height:10px;margin-right:0;opacity:0;transform:translateX(-8px) scale(.4) rotate(-90deg);background:var(--mauve);-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 0l2.6 9.4L24 12l-9.4 2.6L12 24l-2.6-9.4L0 12l9.4-2.6Z' fill='black'/%3E%3C/svg%3E") center/contain no-repeat;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 0l2.6 9.4L24 12l-9.4 2.6L12 24l-2.6-9.4L0 12l9.4-2.6Z' fill='black'/%3E%3C/svg%3E") center/contain no-repeat;transition:width .4s,margin .4s,opacity .35s,transform .45s cubic-bezier(.2,.7,.2,1)}
+.footer ul a:hover,.footer nav a:hover,.footer ul a:focus-visible,.footer nav a:focus-visible{transform:translateX(4px);text-decoration:none}
+.footer ul a:hover::before,.footer nav a:hover::before,.footer ul a:focus-visible::before,.footer nav a:focus-visible::before{width:10px;margin-right:8px;opacity:1;transform:none}
+
+/* ===== Typography scale (shared): headings 30-35px desktop / 24px mobile, paragraphs 18px / 17px ===== */
+h2,.head h2,.cta h2,.offer h2,.news h2,.ccta h2,.cta-wrap h2{font-size:34px!important;line-height:1.15!important}
+.hero h1,.chero h1{font-size:clamp(40px,4.2vw,56px)!important;line-height:1.05!important}
+.lead,.sub,.about__copy > p,.about__text p:not(.eyebrow),.cta p,.offer p,.news p,.cta__copy p,.faq__intro .sub,.results .sub,.contact .sub{font-size:18px!important;line-height:1.65!important}
+@media (max-width:1080px){h2,.head h2,.cta h2,.offer h2,.news h2,.ccta h2,.cta-wrap h2{font-size:30px!important}}
+@media (max-width:640px){
+  h2,.head h2,.cta h2,.offer h2,.news h2,.ccta h2,.cta-wrap h2{font-size:24px!important;line-height:1.2!important}
+  .hero h1,.chero h1{font-size:32px!important;line-height:1.1!important}
+  .lead,.sub,.about__copy > p,.about__text p:not(.eyebrow),.cta p,.offer p,.news p,.cta__copy p,.faq__intro .sub,.results .sub,.contact .sub{font-size:17px!important}
+  .modal__box h2,.modal__head h2,.modal__pad h2{font-size:24px!important}
+}
+
+/* ===== Mobile hero: text first, image sized to fit ===== */
+@media (max-width:900px){
+  .hero__art,.chero .hero__art{order:0!important}
+}
+@media (max-width:640px){
+  .hero__art{height:340px!important;margin-top:8px}
+  .hero__grid{gap:24px!important}
+}
+@media (max-width:640px){.arch{height:330px!important;width:min(300px,84%)!important}.hero__art{height:360px!important}}
+
+/* ===== Mobile: hero image first, text below ===== */
+@media (max-width:900px){.hero__art,.chero .hero__art{order:-1!important}.hero__text,.hero__copy,.chero__copy{order:0!important}}

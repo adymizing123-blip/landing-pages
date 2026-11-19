@@ -316,3 +316,8 @@ h2{letter-spacing:-.03em}
 @keyframes scan{0%{transform:translateY(0)}50%{transform:translateY(377px)}100%{transform:translateY(0)}}
 .xray__foot{color:#E0E4FF;justify-content:flex-start}
 .xray__foot i{display:inline-block;width:8px;height:8px;margin-right:8px;border-radius:50%;background:#F5B544;vertical-align:middle}
+
+.faq__intro{order:0!important}
+.faq__img{border-radius:24px}
+@media (max-width:640px){.chero__art{height:380px!important}.chero__frame{width:min(250px,70%)!important}}
+@media (max-width:900px){.chero::before{display:none!important}}

@@ -50,7 +50,10 @@ productsGrid.innerHTML = PRODUCTS.map(p => `
         <text x="60" y="132" text-anchor="middle" font-family="Instrument Serif" font-size="13" fill="#1E3328">${p.short}</text>
       </svg>
       ${p.photo ? `<img class="photo" src="https://images.unsplash.com/photo-${p.photo}?auto=format&fit=crop&q=80&w=700" alt="${p.name}" loading="lazy" onerror="this.remove()">` : ''}
-      <span class="pcard__hint" aria-hidden="true">Hover for details</span>
+          </div>
+    <div class="pcard__body">
+      <div class="pcard__row"><h3>${p.name}</h3><span class="rating">★ ${p.rating}</span></div>
+      <p>${p.desc}</p>
       <div class="pcard__info">
         <div class="pcard__row">
           <span class="pcard__price">${p.price}${p.old ? `<s>${p.old}</s>` : ''}</span>
@@ -59,10 +62,6 @@ productsGrid.innerHTML = PRODUCTS.map(p => `
         <div class="chips"><span class="chip">${p.skin}</span><span class="chip chip--warm">${p.benefit}</span></div>
         <button type="button" class="btn btn--dark btn--block" data-add="1" data-name="${p.name}">Add to Bag</button>
       </div>
-    </div>
-    <div class="pcard__body">
-      <div class="pcard__row"><h3>${p.name}</h3><span class="rating">★ ${p.rating}</span></div>
-      <p>${p.desc}</p>
     </div>
   </article>`).join('');
 
@@ -184,3 +183,25 @@ const spy = new IntersectionObserver((entries) => {
   entries.forEach(en => { if (en.isIntersecting) navLinks.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + en.target.id)); });
 }, { rootMargin: '-45% 0px -50% 0px' });
 navLinks.forEach(a => { const sec = document.querySelector(a.getAttribute('href')); if (sec) spy.observe(sec); });
+
+/* Mobile menu: pin header, lock page scroll, restore position on close */
+(() => {
+  const m = document.getElementById('menu'), n = document.querySelector('.nav'), bt = document.getElementById('burger');
+  if (!m || !n) return;
+  let y = 0, was = false;
+  const remember = () => { if (!m.classList.contains('open')) y = window.scrollY; };
+  bt && bt.addEventListener('click', remember, true);
+  bt && bt.addEventListener('touchstart', remember, { capture: true, passive: true });
+  const sync = () => {
+    const open = m.classList.contains('open');
+    if (open === was) return;
+    was = open;
+    if (open) document.documentElement.style.setProperty('--mh', n.offsetHeight + 'px');
+    document.documentElement.classList.toggle('menu-open', open);
+    if (!open) {
+      const h = document.documentElement;
+      requestAnimationFrame(() => { const prev = h.style.scrollBehavior; h.style.scrollBehavior = 'auto'; window.scrollTo(0, y); h.style.scrollBehavior = prev; });
+    }
+  };
+  new MutationObserver(sync).observe(m, { attributes: true, attributeFilter: ['class'] });
+})();

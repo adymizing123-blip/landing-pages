@@ -445,3 +445,25 @@ document.addEventListener('click', (e) => {
 
 $('#year').textContent = new Date().getFullYear();
 })();
+
+/* Mobile menu: pin header, lock page scroll, restore position on close */
+(() => {
+  const m = document.getElementById('menu'), n = document.querySelector('.nav'), bt = document.getElementById('burger');
+  if (!m || !n) return;
+  let y = 0, was = false;
+  const remember = () => { if (!m.classList.contains('open')) y = window.scrollY; };
+  bt && bt.addEventListener('click', remember, true);
+  bt && bt.addEventListener('touchstart', remember, { capture: true, passive: true });
+  const sync = () => {
+    const open = m.classList.contains('open');
+    if (open === was) return;
+    was = open;
+    if (open) document.documentElement.style.setProperty('--mh', n.offsetHeight + 'px');
+    document.documentElement.classList.toggle('menu-open', open);
+    if (!open) {
+      const h = document.documentElement;
+      requestAnimationFrame(() => { const prev = h.style.scrollBehavior; h.style.scrollBehavior = 'auto'; window.scrollTo(0, y); h.style.scrollBehavior = prev; });
+    }
+  };
+  new MutationObserver(sync).observe(m, { attributes: true, attributeFilter: ['class'] });
+})();

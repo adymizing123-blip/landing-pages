@@ -673,3 +673,116 @@ h2,.head h2,.cta h2,.offer h2,.news h2,.ccta h2,.cta-wrap h2{font-size:34px!impo
 
 /* ===== Mobile: hero image first, text below ===== */
 @media (max-width:900px){.hero__art,.chero .hero__art{order:-1!important}.hero__text,.hero__copy,.chero__copy{order:0!important}}
+
+/* ===== Section spacing: 100px desktop, 72px tablet, 40px mobile ===== */
+.section,.cta-wrap,.offer-wrap,.news-wrap{padding-top:100px!important;padding-bottom:100px!important}
+@media (max-width:1080px){.section,.cta-wrap,.offer-wrap,.news-wrap{padding-top:72px!important;padding-bottom:72px!important}}
+@media (max-width:640px){
+  .section,.cta-wrap,.offer-wrap,.news-wrap{padding-top:40px!important;padding-bottom:40px!important}
+  .hero,.chero{padding-top:20px!important;padding-bottom:40px!important}
+  .footer{padding-top:40px!important}
+  .head,.head--split{margin-bottom:24px!important}
+}
+
+/* ===== Mobile menu: header pinned + page locked while menu is open ===== */
+@media (max-width:1080px){
+  html.menu-open,html.menu-open body{overflow:hidden!important}
+  html.menu-open .nav{position:fixed!important;top:0!important;left:0;right:0;z-index:1000!important}
+  html.menu-open #menu{position:fixed!important;top:var(--mh,73px)!important;bottom:0!important;left:0!important;right:0!important;height:auto!important;z-index:999}
+}
+
+/* ===== Mobile polish: card titles, footer spacing, stats, hours ===== */
+@media (max-width:640px){
+  article h3,.scard h3,.pcard h3,.test h3,.doc h3,.plan h3,.tier h3,.tm h3,.member h3{font-size:22px!important;line-height:1.25!important}
+  .footer__bottom{margin-top:28px!important}
+  .hours dd{white-space:nowrap}
+  .about__nums{gap:12px!important}
+  .about__nums strong{font-size:26px!important;white-space:nowrap}
+  .about__nums span{font-size:13px!important;line-height:1.4!important}
+  .stats strong{font-size:34px!important}
+  .stats li{white-space:normal}
+  .test__row strong{white-space:nowrap}
+  .btn{white-space:normal}
+}
+
+/* ===== Mobile cards: stacked layout, tags in flow, no overlapping hero cards ===== */
+.test__tag{position:static!important;align-self:flex-start;margin-bottom:14px}
+@media (max-width:640px){
+  .hero__art .fcard--c,.chero__art .fcard--c{display:none!important}
+  .scard{display:flex!important;flex-direction:column!important;align-items:stretch!important;padding:22px 20px!important}
+  .scard__ic{margin-bottom:12px}
+  .scard__more{grid-column:auto!important;width:100%}
+  .scard__tag{align-self:flex-start;margin:0 0 8px!important}
+  .pfacts{display:grid!important;grid-template-columns:1fr 1fr;gap:8px}
+  .doc{grid-template-columns:1fr!important}
+  .test{padding:22px 20px!important}
+}
+@media (max-width:640px){.scard__more{display:flex!important;flex-direction:column!important;align-items:stretch!important;gap:14px!important}}
+
+/* ===== Emergency bar: message on top, call line below (mobile) ===== */
+@media (max-width:640px){
+  .ebar__inner{justify-content:center!important;text-align:center;padding-block:10px!important}
+  .ebar p{display:block!important;text-align:center;line-height:1.5;font-size:13px}
+  .ebar p svg{display:inline-block;vertical-align:-3px;margin-right:4px}
+  .ebar p strong{display:block;margin-top:2px}
+}
+
+/* ===== In-network strip ===== */
+.insure__inner{padding-top:40px!important;padding-bottom:40px!important;justify-content:center!important;text-align:center}
+.insure ul{justify-content:center}
+@media (max-width:640px){
+  .insure__inner{flex-direction:column;gap:16px!important;padding-top:32px!important;padding-bottom:32px!important}
+  .insure ul{gap:8px!important;font-size:14px!important}
+  .insure li{padding:8px 14px;border:1px solid var(--line);border-radius:999px;background:var(--bg)}
+}
+
+/* ===== About stats as tiles ===== */
+@media (max-width:640px){
+  .about__nums{grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:8px!important;border-top:0!important;padding-top:0!important;margin-top:28px!important}
+  .about__nums > div{background:var(--white);border:1px solid var(--line);border-radius:14px;padding:16px 8px;text-align:center;display:flex;flex-direction:column;align-items:center;gap:6px}
+  .about__nums strong{font-size:24px!important}
+  .about__nums span{font-size:12.5px!important;line-height:1.35!important}
+}
+
+/* ===== Service card: tag beside the icon (mobile) ===== */
+@media (max-width:640px){
+  .scard{display:grid!important;grid-template-columns:auto 1fr;column-gap:12px;align-items:center}
+  .scard > *{grid-column:1/-1}
+  .scard > .scard__ic{grid-column:1!important;margin:0!important}
+  .scard > .scard__tag{grid-column:2!important;justify-self:end;margin:0!important}
+  .scard > h3{margin-top:14px!important}
+}
+@media (max-width:640px){.scard > .scard__tag{justify-self:start!important}}
+@media (max-width:640px){
+  .plan-meta{display:grid!important;grid-template-columns:1fr 1fr;gap:8px}
+  .plan-meta span{border-radius:12px!important;padding:8px 10px!important;font-size:12px!important;line-height:1.35;display:flex;align-items:center}
+}
+
+/* ===== Filter tabs: 3 on top, 2 below (mobile) ===== */
+@media (max-width:640px){
+  .tabs{display:grid!important;grid-template-columns:repeat(6,minmax(0,1fr));gap:8px!important}
+  .tabs > *{grid-column:span 2;width:100%;min-height:42px!important;padding:6px 8px!important;font-size:12.5px!important;line-height:1.25!important;white-space:normal!important;text-align:center;border-radius:14px!important}
+  .tabs > :nth-child(4):nth-last-child(2),.tabs > :nth-child(5):last-child{grid-column:span 3}
+  .tabs:has(> :nth-child(4):last-child) > *{grid-column:span 3}
+}
+@media (max-width:640px){
+  .scard > *{grid-column:1/-1!important}
+  .scard > .scard__ic{grid-column:1!important}
+  .scard > .scard__tag{grid-column:2!important}
+  .pfacts span{padding:10px 12px!important;font-size:12px!important;line-height:1.3!important}
+  .pfacts strong{display:block;font-size:14.5px!important;margin-top:3px;white-space:nowrap}
+  .scard__meta{display:flex!important;justify-content:space-between;align-items:baseline;gap:10px}
+  .scard__meta span{white-space:nowrap}
+}
+@media (max-width:640px){
+  .scard{grid-template-areas:none!important;grid-template-rows:none!important}
+  .scard > *{grid-row:auto!important}
+  .scard > .scard__ic{grid-row:1!important;width:52px!important;height:52px!important;align-self:center}
+  .scard > .scard__tag{grid-row:1!important;align-self:center}
+  .scard > h3{margin:18px 0 6px!important}
+}
+
+/* ===== Mobile menu links: 22px, regular weight ===== */
+@media (max-width:1080px){
+  #menu > a:not(.btn){font-size:22px!important;font-weight:400!important;line-height:1.3!important;padding-top:16px!important;padding-bottom:16px!important;letter-spacing:0!important}
+}

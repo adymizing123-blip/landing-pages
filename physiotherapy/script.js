@@ -428,3 +428,16 @@ $('#year').textContent = new Date().getFullYear();
   };
   new MutationObserver(sync).observe(m, { attributes: true, attributeFilter: ['class'] });
 })();
+
+/* How it works: highlight steps up to the one in focus */
+(() => {
+  const steps = [...document.querySelectorAll('#howSteps .hstep')];
+  if (!steps.length) return;
+  const light = (n) => steps.forEach((s, i) => { s.classList.toggle('on', i < n); s.classList.toggle('line-on', i < n - 1); });
+  steps.forEach((s, i) => { s.addEventListener('mouseenter', () => light(i + 1)); });
+  document.getElementById('howSteps').addEventListener('mouseleave', () => light(0));
+  if (!window.matchMedia('(hover:hover)').matches) {
+    const io = new IntersectionObserver((es) => es.forEach(e => { if (e.isIntersecting) light(steps.indexOf(e.target) + 1); }), { rootMargin: '-45% 0px -45% 0px' });
+    steps.forEach(s => io.observe(s));
+  }
+})();

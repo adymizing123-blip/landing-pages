@@ -292,3 +292,21 @@ h1,h2,h3{letter-spacing:-.035em}
 .faq__img{border-radius:14px}
 @media (max-width:640px){.chero__art{height:auto!important}.monitor{min-height:0}.mon__ecg{min-height:110px}.mon__bars{height:44px}}
 @media (max-width:640px){.chero__art .fcard--c{display:none!important}}
+
+/* ===== About: photo collage (1 large + 2 small) ===== */
+.cabout__media{display:grid;grid-template-columns:1.35fr 1fr;grid-template-rows:1fr 1fr;gap:16px;align-self:stretch}
+.cabout__photo{grid-row:1/3;aspect-ratio:auto!important;min-height:480px;height:100%}
+.cabout__mini{position:relative;border-radius:var(--r-lg);overflow:hidden;background:#F6ECEE;box-shadow:var(--shadow);min-height:0}
+.cabout__mini .photo{transition:transform 1.2s var(--ease)}
+.cabout__mini:hover .photo{transform:scale(1.06)}
+.cabout__badge{right:auto!important;left:-18px;bottom:28px}
+@media (max-width:1080px){.cabout__badge{left:12px}}
+@media (max-width:640px){
+  .cabout__media{grid-template-columns:1fr 1fr;grid-template-rows:auto auto;gap:10px}
+  .cabout__photo{grid-row:auto;grid-column:1/-1;min-height:0;aspect-ratio:4/3!important}
+  .cabout__mini{aspect-ratio:1}
+  .cabout__badge{grid-column:1/-1}
+}
+/* ===== Hero: more space above the badge ===== */
+@media (min-width:1081px){.chero{padding-top:96px!important}}
+.chero__art .fcard--c{display:none!important}

@@ -190,12 +190,16 @@ track.innerHTML = REVIEWS.map((r, i) => `
   </figure>`).join('');
 dots.innerHTML = REVIEWS.map((_, i) => `<button type="button" aria-label="Go to review ${i + 1}"></button>`).join('');
 let slide = 0, auto;
+const perView = () => (window.innerWidth > 900 ? 2 : 1);
 function go(i) {
-  slide = (i + REVIEWS.length) % REVIEWS.length;
-  track.style.transform = `translateX(-${slide * 100}%)`;
+  const max = REVIEWS.length - perView();
+  if (dots.children.length !== max + 1) dots.innerHTML = Array.from({ length: max + 1 }, (_, k) => `<button type="button" aria-label="Go to slide ${k + 1}"></button>`).join('');
+  slide = i > max ? 0 : (i < 0 ? max : i);
+  const s = track.children[slide];
+  track.style.transform = `translateX(-${s ? s.offsetLeft : 0}px)`;
   $$('button', dots).forEach((d, k) => d.setAttribute('aria-current', k === slide));
 }
-function play() { clearInterval(auto); auto = setInterval(() => go(slide + 1), 6000); }
+function play() { clearInterval(auto); auto = setInterval(() => go(slide + 1), 4000); }
 $('#prev').addEventListener('click', () => { go(slide - 1); play(); });
 $('#next').addEventListener('click', () => { go(slide + 1); play(); });
 dots.addEventListener('click', (e) => { const i = $$('button', dots).indexOf(e.target); if (i > -1) { go(i); play(); } });
@@ -203,11 +207,12 @@ const sliderEl = $('#slider');
 sliderEl.addEventListener('mouseenter', () => clearInterval(auto));
 sliderEl.addEventListener('mouseleave', play);
 let sx = null; // swipe
-sliderEl.addEventListener('touchstart', (e) => { sx = e.touches[0].clientX; }, { passive: true });
+sliderEl.addEventListener('touchstart', (e) => { sx = e.touches[0].clientX; clearInterval(auto); }, { passive: true });
 sliderEl.addEventListener('touchend', (e) => {
   if (sx === null) return; const dx = e.changedTouches[0].clientX - sx;
-  if (Math.abs(dx) > 40) { go(slide + (dx < 0 ? 1 : -1)); play(); } sx = null;
+  if (Math.abs(dx) > 40) go(slide + (dx < 0 ? 1 : -1)); sx = null; play();
 });
+window.addEventListener('resize', () => go(slide));
 go(0); play();
 
 /* ---------- BEFORE / AFTER ---------- */
